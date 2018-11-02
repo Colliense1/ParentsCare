@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:id="@id/main_layout"
+    android:background="#ffffffff"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools">
+
+    <android.support.v7.widget.Toolbar
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:id="@id/toolbar"
+        android:background="#336fcf"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="clickBack"
+                android:src="@drawable/ic_arrow_back_black_24dp" />
+
+
+            <TextView
+                android:textSize="18.0sp"
+                android:textColor="#fff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="   Add DOCTOR"
+                android:layout_weight="10"
+                />
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:padding="16.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingTop="4.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:textSize="13.0sp"
+                android:textColor="#ffe03943"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Name" />
+
+            <EditText
+                android:textSize="14.0sp"
+                android:textColor="#2b2a2a"
+                android:textColorHint="#8c8b8b"
+                android:id="@id/editTextName"
+                android:background="@null"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8.0dip"
+                android:hint="Type Doctor's Name"
+                android:maxLines="1"
+                android:inputType="textPersonName|textCapWords" />
+
+            <View
+                android:background="#f1e2e2"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:layout_marginTop="8.0dip"
+                android:layout_marginBottom="16.0dip" />
+
+            <TextView
+                android:textSize="13.0sp"
+                android:textColor="#ffe03943"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Avatar" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16.0dip">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@id/imageViewMale"
+                    android:background="@drawable/background_red_circle"
+                    android:padding="8.0dip"
+                    android:layout_width="60.0dip"
+                    android:layout_height="60.0dip"
+                    android:layout_marginTop="4.0dip"
+                    android:src="@drawable/doctor_avatar_male"
+                    app:civ_fill_color="#ff979797"
+                    xmlns:app="http://schemas.android.com/apk/res-auto" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@id/imageViewFemale"
+                    android:background="@null"
+                    android:padding="8.0dip"
+                    android:layout_width="60.0dip"
+                    android:layout_height="60.0dip"
+                    android:layout_marginTop="4.0dip"
+                    android:src="@drawable/doctor_avatar_female"
+                    app:civ_fill_color="#ff979797"
+                    xmlns:app="http://schemas.android.com/apk/res-auto" />
+            </LinearLayout>
+
+            <TextView
+                android:textSize="13.0sp"
+                android:textColor="#ffe03943"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Speciality" />
+
+            <EditText
+                android:textSize="14.0sp"
+                android:textColor="#2b2a2a"
+                android:textColorHint="#121010"
+                android:id="@id/editTextSpecialty"
+                android:background="@null"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8.0dip"
+                android:hint="Select Specialty"
+                android:maxLines="1"
+                android:drawableRight="@drawable/icon_arrow_down"
+                android:inputType="none"
+                android:drawableEnd="@drawable/icon_arrow_down" />
+
+            <View
+                android:background="#e2c5c5"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:layout_marginTop="8.0dip"
+                android:layout_marginBottom="16.0dip" />
+
+            <TextView
+                android:textSize="13.0sp"
+                android:textColor="#ffe03943"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Mobile Number" />
+
+            <EditText
+                android:textSize="14.0sp"
+                android:textColor="#2d2b2b"
+                android:textColorHint="#8c8b8b"
+                android:id="@id/editTextPhone"
+                android:background="@null"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8.0dip"
+                android:hint="Type Mobile Number"
+                android:maxLines="1"
+                android:maxLength="11"
+                android:inputType="phone" />
+
+            <View
+                android:background="#e9cccc"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:layout_marginTop="8.0dip"
+                android:layout_marginBottom="16.0dip" />
+
+            <TextView
+                android:textSize="13.0sp"
+                android:textColor="#ffe03943"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Email" />
+
+            <EditText
+                android:textSize="14.0sp"
+                android:textColor="#403f3f"
+                android:textColorHint="#1d1b1b"
+                android:id="@id/editTextEmail"
+                android:background="@null"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8.0dip"
+                android:hint="Type Email Address"
+                android:maxLines="1"
+                android:inputType="textEmailAddress" />
+
+
+            <View
+                android:background="#e9cccc"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:layout_marginTop="8.0dip"
+                android:layout_marginBottom="16.0dip" />
+
+            <android.support.v7.widget.CardView
+                android:background="#fffefefe"
+                android:layout_width="150dp"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="16.0dip"
+                android:layout_marginBottom="32.0dip"
+                android:layout_height="64.0dip"
+                card_view:cardCornerRadius="6.0dip"
+                card_view:cardElevation="12.0dip"
+                card_view:cardUseCompatPadding="false">
+
+                <LinearLayout
+                    android:onClick="clickAddDoctor"
+                    android:gravity="center"
+                    android:layout_gravity="bottom"
+                    android:orientation="horizontal"
+                    android:id="@id/linearLayoutAddEmergencyContact"
+                    android:background="@drawable/background_button"
+                    android:padding="12.0dip"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8.0dip">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_add"
+                        android:tint="@color/white" />
+
+
+                    <Button
+                        android:onClick="clickAddDoctor"
+                        android:textSize="15.0sp"
+                        android:textColor="#fff"
+                        android:layout_gravity="end"
+                        android:id="@id/textViewDone"
+                        android:background="@drawable/background_button"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:text="Add"
+
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_medicine"
+            android:icon="@drawable/icon_navigation_my_medicine"
+            android:title="My Medicines" />
+        <item
+            android:id="@+id/nav_reminder"
+            android:icon="@drawable/icon_navigation_pill_reminder"
+            android:title="Pill Reminder" />
+
+        <item
+            android:id="@+id/nav_appointments"
+            android:icon="@drawable/icon_navigation_my_appointment"
+            android:title="My Appointments" />
+
+        <item
+            android:id="@+id/nav_library"
+            android:icon="@drawable/icon_navigation_medicine_library"
+            android:title="Medicine Library" />
+        <item
+            android:id="@+id/nav_doctor"
+            android:icon="@drawable/icon_navigation_doctors"
+            android:title="Doctors" />
+
+        <item
+            android:id="@+id/nav_contacts"
+            android:icon="@drawable/icon_navigation_emergency_contacts"
+            android:title="Emergency Contacts" />
+
+        <item
+            android:id="@+id/nav_diary"
+            android:icon="@drawable/icon_navigation_my_diary"
+            android:title="My Diary" />
+
+        <item
+            android:id="@+id/nav_stats"
+            android:icon="@drawable/icon_navigation_health_stats"
+            android:title="Health Status" />
+
+        <item
+            android:id="@+id/nav_bmi"
+            android:icon="@drawable/bmi_c"
+            android:title="BMI Calculator" />
+        <item
+            android:id="@+id/nav_signout"
+            android:icon="@drawable/ic_highlight_off_black_24dp"
+            android:title="Sign out" />
+
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+        </menu>
+    </item>
+
+</menu>

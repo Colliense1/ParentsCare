@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@id/main_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffffff"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#336fcf"
+        android:minHeight="?actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="clickBack"
+                android:src="@drawable/ic_arrow_back_black_24dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:text="   Add Emergency Contacts"
+                android:textColor="#fff"
+                android:textSize="18.0sp" />
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="16.0dip">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:paddingTop="4.0dip">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textColor="#ffe03943"
+                android:textSize="13.0sp" />
+
+            <EditText
+                android:id="@id/editTextName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8.0dip"
+                android:background="@null"
+                android:hint="Type Your Name"
+                android:inputType="textPersonName|textCapWords"
+                android:maxLines="1"
+                android:textColor="#2b2a2a"
+                android:textColorHint="#8c8b8b"
+                android:textSize="14.0sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:layout_marginBottom="16.0dip"
+                android:layout_marginTop="8.0dip"
+                android:background="#f1e2e2" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16.0dip"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Mobile Number"
+                android:textColor="#ffe03943"
+                android:textSize="13.0sp" />
+
+            <EditText
+                android:id="@id/editTextPhone"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8.0dip"
+                android:background="@null"
+                android:hint="Type Mobile Number"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:maxLines="1"
+                android:textColor="#2d2b2b"
+                android:textColorHint="#8c8b8b"
+                android:textSize="14.0sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:layout_marginBottom="16.0dip"
+                android:layout_marginTop="8.0dip"
+                android:background="#e9cccc" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="64.0dip"
+                android:layout_marginBottom="32.0dip"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="16.0dip"
+                android:background="#fffefefe"
+                card_view:cardCornerRadius="6.0dip"
+                card_view:cardElevation="12.0dip"
+                card_view:cardUseCompatPadding="false">
+
+                <LinearLayout
+                    android:id="@id/linearLayoutAddEmergencyContact"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="8.0dip"
+                    android:background="@drawable/background_button"
+                    android:gravity="center"
+                    android:onClick="clickAddContact"
+                    android:orientation="horizontal"
+                    android:padding="12.0dip">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_add"
+                        android:tint="@color/white" />
+
+
+                    <Button
+                        android:id="@id/textViewDone"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:background="@drawable/background_button"
+                        android:onClick="clickAddContact"
+                        android:text="Add"
+                        android:textColor="#fff"
+                        android:textSize="15.0sp"
+
+                        />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

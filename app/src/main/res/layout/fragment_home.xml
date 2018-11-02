@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomeFragment">
+
+
+    <ViewFlipper
+        android:id="@+id/v_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+    </ViewFlipper>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#eadede"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="8.0dip"
+                android:paddingRight="8.0dip">
+
+                <android.support.v7.widget.CardView
+                    android:id="@id/cardViewPillReminder"
+                    android:layout_width="0.0dip"
+                    android:layout_height="120.0dip"
+                    android:layout_margin="8.0dip"
+                    android:layout_weight="1.0"
+                    card_view:cardCornerRadius="6.0dip"
+                    card_view:cardElevation="4.0dip"
+                    card_view:cardUseCompatPadding="false">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-8.0dip"
+                            android:src="@drawable/icon_home_pill_reminder" />
+
+                        <TextView
+                            android:id="@id/textViewHomePillReminder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-8.0dip"
+                            android:gravity="center"
+                            android:text="Pill reminder"
+                            android:textColor="@color/textBlack"
+                            android:textSize="14.0sp" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@id/cardViewMyAppointments"
+                    android:layout_width="0.0dip"
+                    android:layout_height="120.0dip"
+                    android:layout_margin="8.0dip"
+                    android:layout_weight="1.0"
+                    card_view:cardCornerRadius="6.0dip"
+                    card_view:cardElevation="6.0dip"
+                    card_view:cardUseCompatPadding="false">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_home_appointment" />
+
+                        <TextView
+                            android:id="@id/textViewHomeMyAppointment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="My Appointment"
+                            android:textColor="@color/textBlack"
+                            android:textSize="14.0sp" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="8.0dip"
+                android:paddingRight="8.0dip">
+
+                <android.support.v7.widget.CardView
+                    android:id="@id/cardViewMedicinelibrary"
+                    android:layout_width="0.0dip"
+                    android:layout_height="120.0dip"
+                    android:layout_margin="8.0dip"
+                    android:layout_weight="1.0"
+                    card_view:cardCornerRadius="6.0dip"
+                    card_view:cardElevation="6.0dip"
+                    card_view:cardUseCompatPadding="false">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@id/imageView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/medicine_library" />
+
+                        <TextView
+                            android:id="@id/textViewHomeRenataProducts"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Medicine Library"
+                            android:textColor="@color/textBlack"
+                            android:textSize="14.0sp" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@id/cardViewHealthStats"
+                    android:layout_width="0.0dip"
+                    android:layout_height="120.0dip"
+                    android:layout_margin="8.0dip"
+                    android:layout_weight="1.0"
+                    card_view:cardCornerRadius="6.0dip"
+                    card_view:cardElevation="6.0dip"
+                    card_view:cardUseCompatPadding="false">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_colored_home_health_stats" />
+
+                        <TextView
+                            android:id="@id/textViewHomeHealthStats"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Health Status"
+                            android:textColor="@color/textBlack"
+                            android:textSize="14.0sp" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10.0dip"
+                android:layout_marginLeft="85dp"
+                android:layout_marginRight="85dp"
+                android:orientation="horizontal"
+                android:paddingLeft="8.0dip"
+                android:paddingRight="8.0dip">
+
+                <android.support.v7.widget.CardView
+                    android:id="@id/cardViewMyDiary"
+                    android:layout_width="0.0dip"
+                    android:layout_height="120.0dip"
+                    android:layout_margin="8.0dip"
+                    android:layout_weight="1.0"
+                    card_view:cardCornerRadius="6.0dip"
+                    card_view:cardElevation="6.0dip"
+                    card_view:cardUseCompatPadding="false">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_colored_home_my_diary" />
+
+                        <TextView
+                            android:id="@id/textViewHomeMyDiary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="My Diary"
+                            android:textColor="@color/textBlack"
+                            android:textSize="14.0sp" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/linearLayoutCallMsgEmContacts"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16.0dip"
+                android:background="@drawable/background_button"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="12.0dip">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_phone"
+                    android:tint="@color/white" />
+
+                <TextView
+                    android:id="@id/textViewHomeEmergencyContact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16.0dip"
+                    android:gravity="center"
+                    android:text="EMERGENCY CONTACT"
+                    android:textColor="@color/white"
+                    android:textSize="14.0sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
