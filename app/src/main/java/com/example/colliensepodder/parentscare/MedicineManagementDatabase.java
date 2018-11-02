@@ -358,8 +358,8 @@ public class MedicineManagementDatabase {
         contentValues.put(DatabaseHelper.DOCTOR_EMAIL, newdoctorinfo.getDoctorEmail());
 
         long update1 = sqLiteDatabase.update(DatabaseHelper.DOCTOR_TABLE, contentValues,
-                databaseHelper.DATABASE_NAME + " =? and "
-                        + databaseHelper.DOCTOR_NUMBER + " =? "
+                databaseHelper.DOCTOR_NAME + " =? AND "
+                        + databaseHelper.DOCTOR_NUMBER + " =? AND "
                         + databaseHelper.DOCTOR_EMAIL+ " =? ",
                 new String[]{updateddoctor.getDoctorName(),
                         updateddoctor.getDoctorNumber(),

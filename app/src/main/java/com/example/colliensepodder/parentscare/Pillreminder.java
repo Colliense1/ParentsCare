@@ -1,5 +1,7 @@
 package com.example.colliensepodder.parentscare;
 
+import android.Manifest;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlarmManager;
@@ -9,9 +11,13 @@ import android.app.FragmentTransaction;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
+import android.provider.Settings;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -64,6 +70,7 @@ public class Pillreminder extends AppCompatActivity implements MainFragment.OnFr
     int day, month, year, hour, minute;
     boolean doubleBackToExitPressedOnce = false;
     final static int RQS_1 = 1;
+    public static int ACTION_MANAGE_OVERLAY_PERMISSION_REQUEST_CODE = 5469;
 
    // MaterialBetterSpinner betterSpinner,bspinner;
     //Toolbar mtoolbar;
@@ -75,6 +82,11 @@ public class Pillreminder extends AppCompatActivity implements MainFragment.OnFr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pillreminder);
 
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (!checkPermission()) {
+                requestPermission();
+            }
+        }
         //getSupportActionBar().setDisplayShowHomeEnabled(true);
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -350,6 +362,19 @@ public class Pillreminder extends AppCompatActivity implements MainFragment.OnFr
         callMainFragment(dateFormat, MNAME);
     }
 
+    private boolean checkPermission() {
+        int result = ContextCompat.checkSelfPermission(Pillreminder.this, Manifest.permission.SEND_SMS);
+        if (result == PackageManager.PERMISSION_GRANTED) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private void requestPermission() {
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, 1);
+
+    }
 }
 
        /* betterSpinner = (MaterialBetterSpinner)findViewById(R.id.material_spinner);
