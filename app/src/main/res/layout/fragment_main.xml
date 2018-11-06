@@ -19,23 +19,22 @@
             android:layout_gravity="right|bottom"
             android:layout_marginBottom="25dp"
             android:layout_marginRight="60dp"
-            android:text="Add Medicine"
-            android:textColor="#2a4cb3"
-            android:textSize="20sp" />
+            android:text=""
+             />
 
         <TextView
             android:id="@+id/AddTV"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:layout_gravity="right|bottom"
             android:layout_marginBottom="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginLeft="15dp"
-            android:background="@drawable/circle"
+            android:background="@drawable/background_button"
             android:gravity="center"
-            android:text=" + "
+            android:text="Add Medicine "
             android:textColor="@color/WHITE"
-            android:textSize="25sp" />
+            android:textSize="14.0sp" />
 
 
     </FrameLayout>
