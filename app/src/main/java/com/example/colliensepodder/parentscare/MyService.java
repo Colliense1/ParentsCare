@@ -5,9 +5,6 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
-/**
- * Created by Shipon on 8/29/2018.
- */
 
 public class MyService extends Service {
 

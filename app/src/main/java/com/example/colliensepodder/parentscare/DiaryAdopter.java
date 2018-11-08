@@ -39,7 +39,6 @@ public class DiaryAdopter extends RecyclerView.Adapter<DiaryAdopter.ViewHolder> 
         return new ViewHolder(view);
     }
 
-
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.DiaryTextTV.setText(diaries.get(position).getDiaryText());

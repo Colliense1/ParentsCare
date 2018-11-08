@@ -12,7 +12,7 @@ import android.widget.Toast;
 import static com.example.colliensepodder.parentscare.EmergencyContactAdopter.updatedcontact;
 
 public class AddContactActivity extends AppCompatActivity {
-    EditText editTextName, editTextPhone;
+    EditText editTextName, editTextPhone,editTextEmail;
 
     String mode;
     TextView textViewDone;
@@ -24,6 +24,7 @@ public class AddContactActivity extends AppCompatActivity {
 
         editTextName = (EditText) findViewById(R.id.editTextName);
         editTextPhone = (EditText) findViewById(R.id.editTextPhone);
+        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
 
 
         textViewDone = findViewById(R.id.textViewDone);
@@ -33,6 +34,7 @@ public class AddContactActivity extends AppCompatActivity {
         } else {
             editTextName.setText(updatedcontact.getContactName());
             editTextPhone.setText(updatedcontact.getContactNumber());
+            editTextEmail.setText(updatedcontact.getContactEmail());
             textViewDone.setText("Update");
         }
     }
@@ -45,16 +47,24 @@ public class AddContactActivity extends AppCompatActivity {
         } else if (editTextPhone.getText().toString().equals("")) {
             editTextPhone.setError("This field can't be empty");
             return;
+        } else if(editTextEmail.getText().toString().equals("")){
+            editTextEmail.setError("This field can't be empty");
+            return;
+
         } else {
 
             if (mode.equals("1")) {
-                Contact newContact = new Contact(editTextName.getText().toString(), editTextPhone.getText().toString());
+                Contact newContact = new Contact(editTextName.getText().toString(),
+                        editTextPhone.getText().toString(),
+                        editTextEmail.getText().toString());
                 MedicineManagementDatabase obj = new MedicineManagementDatabase(this);
                 long g = obj.addEmergencyContact(newContact);
                 Toast.makeText(getApplicationContext(), "Emergency Contact Added succesfull " + g, Toast.LENGTH_SHORT).show();
                 this.finish();
             } else {
-                Contact newContact = new Contact(editTextName.getText().toString(), editTextPhone.getText().toString());
+                Contact newContact = new Contact(editTextName.getText().toString(),
+                        editTextPhone.getText().toString(),
+                        editTextEmail.getText().toString());
                 MedicineManagementDatabase obj = new MedicineManagementDatabase(this);
                 long g = obj.updateEmergencyContact(newContact, updatedcontact);
                 Toast.makeText(getApplicationContext(), "Emergency Contact Updated succesfull " + g, Toast.LENGTH_SHORT).show();

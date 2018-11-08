@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "Medicine_reminder";
 
-    public static final int DATABASE_VERSION = 8;
+    public static final int DATABASE_VERSION = 11;
 
     //TABLE1
     public static final String TABLE_MEDICINE_DETAILS = "table_medicine_details";
@@ -35,8 +35,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE_EMERGENCY_CONTACT = "table_emergency_contact";
     public static final String CONTACT_NAME = "contact_name";
     public static final String CONTACT_NUMBER = "contact_address";
+    public static final String CONTACT_EMAIL = "email_address";
+
     public static final String CREATE_TABLE_EMERGENCY_CONTACT_QUERY = "create table if not exists " + TABLE_EMERGENCY_CONTACT
             + "(" + CONTACT_NAME + " text, "
+            + CONTACT_EMAIL + " text, "
             + CONTACT_NUMBER + " text);";
 
 
@@ -57,7 +60,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
    public static final String DIARY_TABLE = "table_diary";
    public static final String DIARY_TEXT = "diary_text";
    public static final String CREATE_DIARY_TABLE_NAME_QUERY = "create table if not exists " + DIARY_TABLE
-           +" ( " + DIARY_TEXT + " text);";
+           +"(" + DIARY_TEXT + " text);";
 
 
     @Override

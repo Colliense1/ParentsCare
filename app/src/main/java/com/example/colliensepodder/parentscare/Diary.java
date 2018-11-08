@@ -13,7 +13,4 @@ public class Diary {
     public String getDiaryText() {
         return diaryText;
     }
-
-
-
 }

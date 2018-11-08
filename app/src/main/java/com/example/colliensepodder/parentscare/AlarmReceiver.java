@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.provider.ContactsContract;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
@@ -17,7 +18,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.telephony.SmsManager;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.zxing.client.result.EmailDoCoMoResultParser;
 
 import java.util.ArrayList;
 
@@ -41,22 +45,33 @@ public class AlarmReceiver extends BroadcastReceiver {
         ringtoneAlarm.play();
         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(context);
         String msg = "Time to take a medicine";
-        builder.setMessage(msg).setCancelable(
-                false).setPositiveButton("OK",
-                new DialogInterface.OnClickListener() {
+        builder.setMessage(msg)
+                .setCancelable(false)
+                .setPositiveButton("SMS", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
                         ringtoneAlarm.stop();
                         sentMsgToParent();
-
-
                         // ringtoneAlarm.stop();
                         //    onDestroy();
                     }
-                });
+
+
+                })
+        .setNegativeButton("Email", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+                ringtoneAlarm.stop();
+            }
+        })
+        ;
+
+
         android.app.AlertDialog alert = builder.create();
         alert.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
         alert.show();
+
     }
 
     private void showNotification(Context context) {
@@ -72,13 +87,15 @@ public class AlarmReceiver extends BroadcastReceiver {
         mNotificationManager.notify(0, mBuilder.build());
     }
 
+
+
     public void sentMsgToParent(){
         MedicineManagementDatabase obj = new MedicineManagementDatabase(mContext);
         ArrayList<Contact> contacts = obj.retriveAllEmergencyContact();
         if(contacts.size()!=0) {
             if(checkPermission()) {
                 SmsManager smsManager = SmsManager.getDefault();
-                smsManager.sendTextMessage(contacts.get(0).getContactNumber(), null, "This is Test Text", null, null);
+                smsManager.sendTextMessage(contacts.get(0).getContactNumber(), null, "Necessary Medicine has been taken", null, null);
             }
         }else {
             return;

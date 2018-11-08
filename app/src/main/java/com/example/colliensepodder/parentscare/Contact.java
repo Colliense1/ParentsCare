@@ -3,9 +3,12 @@ package com.example.colliensepodder.parentscare;
 public class Contact {
     private String contactName;
     private String contactNumber;
-    public Contact(String contactName, String contactNumber) {
+    private String contactEmail;
+    public Contact(String contactName, String contactNumber, String contactEmail) {
         this.contactName = contactName;
         this.contactNumber = contactNumber;
+        this.contactEmail = contactEmail;
+
     }
 
     public String getContactName() {
@@ -15,6 +18,7 @@ public class Contact {
     public String getContactNumber() {
         return contactNumber;
     }
-
-
+    public String getContactEmail() {
+        return contactEmail;
+    }
 }

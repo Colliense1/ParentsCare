@@ -126,9 +126,10 @@ public class MedicineManagementDatabase {
             do {
                 String mContactName = cursor.getString(cursor.getColumnIndex(DatabaseHelper.CONTACT_NAME));
                 String mContactNumber = cursor.getString(cursor.getColumnIndex(DatabaseHelper.CONTACT_NUMBER));
+                String mContactEmail = cursor.getString(cursor.getColumnIndex(DatabaseHelper.CONTACT_EMAIL));
 
                 // int takenYesOrNo = 0 ;
-                row.add(new Contact(mContactName,mContactNumber));
+                row.add(new Contact(mContactName,mContactNumber,mContactEmail));
             } while (cursor.moveToNext());
         }
         return row;
@@ -167,8 +168,6 @@ public class MedicineManagementDatabase {
     public ArrayList<Diary> retriveAllDiary() {
         ArrayList<Diary> row = new ArrayList<>();
         try {
-
-
             SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
             String selectQuery1 = "Select * from " + DatabaseHelper.DIARY_TABLE;
             Cursor cursor = sqLiteDatabase.rawQuery(selectQuery1, null);
@@ -245,6 +244,8 @@ public class MedicineManagementDatabase {
         long delete2 = sqLiteDatabase.delete(DatabaseHelper.TABLE_MEDICINE_DATE_TIME, databaseHelper.MEDICINE_NAME_TABLE2 + " =? ", new String[]{name});
         return delete2;
     }
+
+    //DELETE EMERGENCY CONTACT
     public long deleteContact(String name) {
         SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -335,6 +336,7 @@ public class MedicineManagementDatabase {
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.CONTACT_NAME, contact.getContactName());
         contentValues.put(DatabaseHelper.CONTACT_NUMBER, contact.getContactNumber());
+        contentValues.put(DatabaseHelper.CONTACT_EMAIL, contact.getContactEmail());
 
         insertedRow1 = sqLiteDatabase.insert(DatabaseHelper.TABLE_EMERGENCY_CONTACT, null, contentValues);
 
@@ -345,6 +347,7 @@ public class MedicineManagementDatabase {
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.CONTACT_NAME, newContact.getContactName());
         contentValues.put(DatabaseHelper.CONTACT_NUMBER, newContact.getContactNumber());
+        contentValues.put(DatabaseHelper.CONTACT_EMAIL, newContact.getContactEmail());
         long update1 = sqLiteDatabase.update(DatabaseHelper.TABLE_EMERGENCY_CONTACT, contentValues, databaseHelper.CONTACT_NAME + " =? and " + databaseHelper.CONTACT_NUMBER+ " =? ", new String[]{updatedcontact.getContactName(), updatedcontact.getContactNumber()});
         return update1;
 
@@ -384,7 +387,7 @@ public class MedicineManagementDatabase {
         contentValues.put(DatabaseHelper.DIARY_TABLE, newdiaries.getDiaryText());
 
         long update1 = sqLiteDatabase.update(DatabaseHelper.DIARY_TABLE,
-                contentValues, databaseHelper.DATABASE_NAME + " =? and "
+                contentValues, databaseHelper.DATABASE_NAME + " =? AND "
                 + databaseHelper.DIARY_TEXT + " =? ",
         new String[]{ updateddiaries.getDiaryText()});
         return update1;

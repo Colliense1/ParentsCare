@@ -117,6 +117,33 @@
                 android:layout_marginTop="8.0dip"
                 android:background="#e9cccc" />
 
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textColor="#ffe03943"
+                android:textSize="13.0sp" />
+
+            <EditText
+                android:id="@id/editTextEmail"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8.0dip"
+                android:background="@null"
+                android:hint="Type Your Email"
+                android:maxLines="1"
+                android:inputType="textPersonName|textCapWords"
+                android:textColor="#2d2b2b"
+                android:textColorHint="#8c8b8b"
+                android:textSize="14.0sp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:layout_marginBottom="16.0dip"
+                android:layout_marginTop="8.0dip"
+                android:background="#e9cccc" />
+
             <android.support.v7.widget.CardView
                 android:layout_width="150dp"
                 android:layout_height="64.0dip"

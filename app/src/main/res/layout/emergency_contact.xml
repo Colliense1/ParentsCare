@@ -13,7 +13,7 @@
         android:layout_marginTop="5dp"
         android:background="#fffefefe"
         android:layout_width="fill_parent"
-        android:layout_height="90.0dip"
+        android:layout_height="130.0dip"
         card_view:cardCornerRadius="6.0dip"
         card_view:cardElevation="12.0dip"
         card_view:cardUseCompatPadding="false">
@@ -50,6 +50,17 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
                 android:text="01753740230"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_marginTop="8dp"
+                android:id="@+id/ContactEmailTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:text="colliensepodder25@gmail.com"
                 android:textColor="#000"
                 android:textSize="20sp" />
         </LinearLayout>
