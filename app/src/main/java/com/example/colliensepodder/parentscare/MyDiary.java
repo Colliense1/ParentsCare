@@ -26,7 +26,6 @@ public class MyDiary extends AppCompatActivity {
         setContentView(R.layout.activity_my_diary);
 
         toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
-        //DiaryRV = (RecyclerView)findViewById(R.id.DiaryRV);
         linearLayoutNoDiary =(LinearLayout)findViewById(R.id.linearLayoutNoDiary);
         headerMyDiary =(TextView) findViewById(R.id.headerMyDiary);
     }
@@ -62,6 +61,7 @@ public class MyDiary extends AppCompatActivity {
 
     public void clickBack(View view) {
         this.finish();
+
     }
 
     public void goToAddDiaryActivity(View view) {

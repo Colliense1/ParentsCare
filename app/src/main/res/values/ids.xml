@@ -120,8 +120,7 @@
     <item type="id" name="frameLayout">false</item>
     <item type="id" name="ghost_view">false</item>
     <item type="id" name="graphView">false</item>
-    <item type="id" name="headerAppointment">false</item>
-    <item type="id" name="headerAskRenata">false</item>
+    <item type="id" name="headerMyAppointment">false</item>
     <item type="id" name="headerBmi">false</item>
     <item type="id" name="headerDoctors">false</item>
     <item type="id" name="headerEmergencyContacts">false</item>
@@ -170,7 +169,7 @@
     <item type="id" name="left_drawer">false</item>
     <item type="id" name="line1">false</item>
     <item type="id" name="line3">false</item>
-    <item type="id" name="linearLayoutAddAppointment">false</item>
+    <item type="id" name="linearLayoutAddMyAppointment">false</item>
     <item type="id" name="linearLayoutAddBloodPressure">false</item>
     <item type="id" name="linearLayoutAddBloodSugar">false</item>
     <item type="id" name="linearLayoutAddContact">false</item>
@@ -188,7 +187,7 @@
     <item type="id" name="linearLayoutDaysInterval">false</item>
     <item type="id" name="linearLayoutDrawerItem">false</item>
     <item type="id" name="linearLayoutGeneral">false</item>
-    <item type="id" name="linearLayoutNoAppointment">false</item>
+    <item type="id" name="linearLayoutNoMyAppointment">false</item>
     <item type="id" name="linearLayoutNoData">false</item>
     <item type="id" name="linearLayoutNoDiary">false</item>
     <item type="id" name="linearLayoutNoDoctor">false</item>
@@ -325,7 +324,7 @@
     <item type="id" name="textViewAddDoctor">false</item>
     <item type="id" name="textViewAddEmergencyContacts">false</item>
     <item type="id" name="textViewAddMedicine">false</item>
-    <item type="id" name="textViewAppointmentDone">false</item>
+    <item type="id" name="textViewMyAppointment">false</item>
     <item type="id" name="textViewAskRenataEmail">false</item>
     <item type="id" name="textViewAskRenataMsg">false</item>
     <item type="id" name="textViewAskRenataSubject">false</item>

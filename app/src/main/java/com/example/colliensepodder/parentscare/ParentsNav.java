@@ -125,6 +125,8 @@ public class ParentsNav extends AppCompatActivity
             startActivity(i);
 
         } else if (id == R.id.nav_appointments) {
+            Intent i = new Intent(this, MyAppointments.class);
+            startActivity(i);
 
         } else if (id == R.id.nav_library) {
 

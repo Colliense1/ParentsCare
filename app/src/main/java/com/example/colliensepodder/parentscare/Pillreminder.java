@@ -87,8 +87,6 @@ public class Pillreminder extends AppCompatActivity implements MainFragment.OnFr
                 requestPermission();
             }
         }
-        //getSupportActionBar().setDisplayShowHomeEnabled(true);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.Toolbar);
         setSupportActionBar(toolbar);

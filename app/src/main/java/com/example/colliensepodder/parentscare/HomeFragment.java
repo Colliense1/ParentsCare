@@ -21,8 +21,13 @@ import android.widget.ViewFlipper;
 
 public class HomeFragment extends Fragment {
 
-    private CardView cardViewPillReminder,cardViewMyAppointments,
-            cardViewMedicinelibrary,cardViewHealthStats,cardViewMyDiary;
+    private CardView cardViewPillReminder;
+    private CardView cardViewMyAppointments;
+    private CardView cardViewMedicinelibrary;
+    private CardView cardViewHealthStats;
+    private CardView cardViewMyDiary;
+
+
     LinearLayout linearLayoutCallMsgEmContacts;
 
     //ImageButton btn,emercontact,medlib,mymed;
@@ -85,9 +90,9 @@ public class HomeFragment extends Fragment {
         cardViewMyAppointments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                medicinelibrary();
-                //Intent i = new Intent(getActivity(),MedicinePreviewActivity.class);
-                //startActivity(i);
+                myappointments();
+                Intent i = new Intent(getActivity(),MyAppointments.class);
+                startActivity(i);
             }
         });
 
@@ -147,7 +152,7 @@ public class HomeFragment extends Fragment {
     }
 
      public void pillrmdr(){}
-     public void mymdcn(){}
+     public void myappointments(){}
      public void medicinelibrary(){}
      public void mymedicine(){}
      public void emergencycontact(){}
