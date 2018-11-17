@@ -49,11 +49,11 @@ public class AddDoctorActivity extends AppCompatActivity {
         }else if(editTextEmail.getText().toString().equals("")) {
             editTextEmail.setError("This field can't be empty");
             return;
-        }
-        else {
+        } else {
 
             if (mode.equals("1")) {
-                Doctorinfo newDoctorinfo = new Doctorinfo(editTextName.getText().toString(),
+                Doctorinfo newDoctorinfo = new Doctorinfo
+                        (editTextName.getText().toString(),
                         editTextPhone.getText().toString(),
                         editTextEmail.getText().toString());
                 MedicineManagementDatabase obj = new MedicineManagementDatabase(this);
@@ -61,7 +61,8 @@ public class AddDoctorActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Doctor Added succesfully " + g, Toast.LENGTH_SHORT).show();
                 this.finish();
             }else{
-                Doctorinfo newDoctorinfo = new Doctorinfo(editTextName.getText().toString(),
+                Doctorinfo newDoctorinfo = new Doctorinfo
+                        (editTextName.getText().toString(),
                         editTextPhone.getText().toString(),
                         editTextEmail.getText().toString());
                 MedicineManagementDatabase obj = new MedicineManagementDatabase(this);

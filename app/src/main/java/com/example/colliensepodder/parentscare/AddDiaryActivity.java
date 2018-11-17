@@ -23,19 +23,14 @@ public class AddDiaryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_diary);
         editTextNote = (EditText) findViewById(R.id.editTextNote);
 
-
-
         textViewDone = findViewById(R.id.textViewDone);
         mode = getIntent().getStringExtra("mode");
         if (mode.equals("1")) {
             textViewDone.setText("Add");
         } else {
             editTextNote.setText(updateddiary.getDiaryText());
-
             textViewDone.setText("Update");
         }
-
-
     }
 
     public void clickAddDiary(View view) {
@@ -54,17 +49,13 @@ public class AddDiaryActivity extends AppCompatActivity {
             } else {
                 Diary newDiaries = new Diary(editTextNote.getText().toString());
                 MedicineManagementDatabase obj = new MedicineManagementDatabase(this);
-                long g = obj.updateDiary(newDiaries, updateddiary);
+                long g = obj.updateDiary(newDiaries,updateddiary);
                 Toast.makeText(getApplicationContext(), "Diary Updated succesfull " + g, Toast.LENGTH_SHORT).show();
                 this.finish();
 
             }
         }
     }
-
-
-
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();

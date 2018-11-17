@@ -384,11 +384,11 @@ public class MedicineManagementDatabase {
     public long updateDiary(Diary newdiaries, Diary updateddiaries) {
         SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(DatabaseHelper.DIARY_TABLE, newdiaries.getDiaryText());
+        contentValues.put(DatabaseHelper.DIARY_TEXT, newdiaries.getDiaryText());
 
         long update1 = sqLiteDatabase.update(DatabaseHelper.DIARY_TABLE,
-                contentValues, databaseHelper.DATABASE_NAME + " =? AND "
-                + databaseHelper.DIARY_TEXT + " =? ",
+                contentValues, databaseHelper.DIARY_TEXT + " =? ",
+                //+ databaseHelper.DIARY_TEXT + " =? ",
         new String[]{ updateddiaries.getDiaryText()});
         return update1;
 
