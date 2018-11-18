@@ -5,29 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/se"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Selectmode">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar1"
         android:layout_width="match_parent"
-        android:layout_height="59sp"
+        android:layout_height="?attr/actionBarSize"
         app:layout_collapseMode="pin"
-        android:background="#0d1e8c"
-        app:titleTextColor="#c61313"
+        android:background="#336fcf"
+        app:titleTextColor="#fcfbfb"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
     </android.support.v7.widget.Toolbar>
 
 
     <com.hitomi.cmlibrary.CircleMenu
         android:id="@+id/circle_menu"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:visibility="visible"
+        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
         />
 
 </RelativeLayout>

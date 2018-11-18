@@ -28,12 +28,14 @@ public class Selectmode extends AppCompatActivity {
 
         mtoolbar = (Toolbar)findViewById(R.id.toolbar1);
         setSupportActionBar(mtoolbar);
-        getSupportActionBar().setTitle("                SelectMode");
+        getSupportActionBar().setTitle("                  SelectMode");
 
         circleMenu = (CircleMenu)findViewById(R.id.circle_menu);
 
 
-        circleMenu.setMainMenu(Color.parseColor("#CDCDCD"), R.mipmap.icon_menu, R.mipmap.icon_cancel);
+        circleMenu.setMainMenu(Color.parseColor("#CDCDCD"),
+                R.mipmap.icon_menu,
+                R.mipmap.icon_cancel);
         circleMenu.addSubMenu(Color.parseColor("#258CFF"), R.mipmap.icon_parents)
                 .addSubMenu(Color.parseColor("#30A400"), R.mipmap.icon_child);
 
@@ -59,7 +61,7 @@ public class Selectmode extends AppCompatActivity {
 
         );
 
-        circleMenu.setOnMenuStatusChangeListener(new OnMenuStatusChangeListener() {
+       /* circleMenu.setOnMenuStatusChangeListener(new OnMenuStatusChangeListener() {
 
                                                      @Override
                                                      public void onMenuOpened() {
@@ -71,7 +73,7 @@ public class Selectmode extends AppCompatActivity {
                                                         // Toast.makeText(Selectmode.this, "Menu Closed", Toast.LENGTH_SHORT).show();
                                                      }
                                                  }
-        );
+        );*/
 
 
     }
