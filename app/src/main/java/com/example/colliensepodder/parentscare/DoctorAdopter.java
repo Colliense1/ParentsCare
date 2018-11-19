@@ -97,8 +97,11 @@ public class DoctorAdopter extends RecyclerView.Adapter<DoctorAdopter.ViewHolder
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView DoctorNameTV, DoctorNumberTV,DoctorEmailTV;
-        TextView dotssaa,editsdoctor;
+        TextView DoctorNameTV;
+        TextView DoctorNumberTV;
+        TextView DoctorEmailTV;
+        TextView dotssaa;
+        TextView editsdoctor;
         LinearLayout doctorCallLinearLayout;
 
         ViewHolder(View itemView) {

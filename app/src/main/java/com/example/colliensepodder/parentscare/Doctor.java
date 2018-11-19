@@ -16,8 +16,11 @@ public class Doctor extends AppCompatActivity {
 
     Toolbar toolbar;
     RecyclerView doctorsRV;
-    LinearLayout Rlayout,LinearLayoutNoDoctor;
-    TextView headerDoctors,textViewAddDoctor,textView3;
+    LinearLayout Rlayout;
+    LinearLayout LinearLayoutNoDoctor;
+    TextView headerDoctors;
+    TextView textViewAddDoctor;
+    TextView textView3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

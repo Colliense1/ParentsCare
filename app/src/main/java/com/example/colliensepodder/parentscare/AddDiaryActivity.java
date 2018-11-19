@@ -13,7 +13,6 @@ import static com.example.colliensepodder.parentscare.EmergencyContactAdopter.up
 public class AddDiaryActivity extends AppCompatActivity {
 
     EditText editTextNote;
-
     String mode;
     TextView textViewDone;
 
@@ -44,13 +43,13 @@ public class AddDiaryActivity extends AppCompatActivity {
                 Diary newdiaries = new Diary(editTextNote.getText().toString());
                 MedicineManagementDatabase obj = new MedicineManagementDatabase(this);
                 long g = obj.addDiary(newdiaries);
-                Toast.makeText(getApplicationContext(), "Diary Added succesfully " + g, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Diary Added succesfully ", Toast.LENGTH_SHORT).show();
                 this.finish();
             } else {
                 Diary newDiaries = new Diary(editTextNote.getText().toString());
                 MedicineManagementDatabase obj = new MedicineManagementDatabase(this);
                 long g = obj.updateDiary(newDiaries,updateddiary);
-                Toast.makeText(getApplicationContext(), "Diary Updated succesfull " + g, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Diary Updated succesfull ", Toast.LENGTH_SHORT).show();
                 this.finish();
 
             }

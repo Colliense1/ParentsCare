@@ -19,7 +19,8 @@ import android.widget.TextView;
 
 public class BmiFragment extends Fragment {
 
-    EditText height,weight;
+    EditText height;
+    EditText weight;
     TextView result;
     Button calculate;
 

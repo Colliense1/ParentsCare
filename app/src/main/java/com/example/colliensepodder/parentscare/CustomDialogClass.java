@@ -21,7 +21,8 @@ import com.example.colliensepodder.parentscare.R;
 public class CustomDialogClass extends Dialog implements android.view.View.OnClickListener {
     public Context mContext;
     public EditText dialogMedicineNameET, dialogMedicineDurationET;
-    Spinner spinnerTabletType, spinnerTabletQuantity;
+    Spinner spinnerTabletType;
+    Spinner spinnerTabletQuantity;
     public Button submitUpdate;
     String mName;
     int duration;

@@ -94,8 +94,10 @@ public class DiaryAdopter extends RecyclerView.Adapter<DiaryAdopter.ViewHolder> 
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
         TextView DiaryTextTV;
-        TextView dotss,edits;
+        TextView dotss;
+        TextView edits;
         LinearLayout DiaryCallLinearLayout;
 
         ViewHolder(View itemView) {

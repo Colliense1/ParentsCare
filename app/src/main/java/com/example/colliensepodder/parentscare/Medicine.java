@@ -3,6 +3,7 @@ package com.example.colliensepodder.parentscare;
 import java.util.ArrayList;
 
 public class Medicine {
+
     private int medicineId;
     private String medicineName;
     private int medicineDuration;

@@ -12,8 +12,10 @@ import android.widget.Toast;
 import static com.example.colliensepodder.parentscare.EmergencyContactAdopter.updatedcontact;
 
 public class AddContactActivity extends AppCompatActivity {
-    EditText editTextName, editTextPhone,editTextEmail;
 
+    EditText editTextName;
+    EditText  editTextPhone;
+    EditText  editTextEmail;
     String mode;
     TextView textViewDone;
 
@@ -72,8 +74,6 @@ public class AddContactActivity extends AppCompatActivity {
 
             }
         }
-
-
     }
 
     @Override

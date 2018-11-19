@@ -20,9 +20,12 @@ public class Emergencycontacts extends AppCompatActivity {
     Toolbar toolbar;
     RecyclerView eContactsRV;
     //ImageView imageView;
-    TextView textView1,textView2,textView3;
+    TextView textView1;
+    TextView textView2;
+    TextView textView3;
     //RecyclerView recyclerView;
-    LinearLayout Rlayout,LinearLayoutNoEmergencyContacts;
+    LinearLayout Rlayout;
+    LinearLayout LinearLayoutNoEmergencyContacts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

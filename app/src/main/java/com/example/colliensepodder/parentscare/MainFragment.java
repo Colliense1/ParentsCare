@@ -23,7 +23,8 @@ import java.util.Comparator;
 
 public class MainFragment extends Fragment {
 
-    String dateSelected, medicineSelected;
+    String dateSelected;
+    String  medicineSelected;
     TextView addMedicineTV;
     RecyclerView mListTv;
 
@@ -33,7 +34,6 @@ public class MainFragment extends Fragment {
     public MainFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

@@ -106,8 +106,12 @@ public class EmergencyContactAdopter extends RecyclerView.Adapter<EmergencyConta
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView contactNameTV, contactNumberTV, ContactEmailTV;
-        TextView dotss,edits;
+
+        TextView contactNameTV;
+        TextView contactNumberTV;
+        TextView ContactEmailTV;
+        TextView dotss;
+        TextView edits;
         LinearLayout MedicineCallLinearLayout;
 
         ViewHolder(View itemView) {

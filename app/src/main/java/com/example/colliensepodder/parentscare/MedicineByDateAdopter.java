@@ -326,7 +326,9 @@ public class MedicineByDateAdopter extends RecyclerView.Adapter<MedicineByDateAd
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView timeTV, remainingTV;
+
+        TextView timeTV;
+        TextView remainingTV;
         ImageView dotsIV;
         LinearLayout medicineDateLinearLayout;
 
