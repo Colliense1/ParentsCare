@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import static com.example.colliensepodder.parentscare.DoctorAdopter.updateddoctor;
 import static com.example.colliensepodder.parentscare.EmergencyContactAdopter.updatedcontact;
 
@@ -16,17 +17,21 @@ public class AddDoctorActivity extends AppCompatActivity {
     EditText editTextName;
     EditText editTextPhone;
     EditText editTextEmail;
+    EditText editTextSpecialty;
     String mode;
     TextView textViewDone;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_doctor);
 
+
         editTextName = (EditText) findViewById(R.id.editTextName);
         editTextPhone = (EditText) findViewById(R.id.editTextPhone);
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
+        editTextSpecialty = (EditText)findViewById(R.id.editTextSpecialty);
 
         textViewDone = findViewById(R.id.textViewDone);
         mode = getIntent().getStringExtra("mode");
@@ -85,4 +90,6 @@ public class AddDoctorActivity extends AppCompatActivity {
     public void clickBack(View view) {
         this.finish();
     }
+
+
 }
