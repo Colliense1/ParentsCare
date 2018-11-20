@@ -25,10 +25,10 @@
 
             <ImageView
                 android:id="@id/imageViewBack"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_marginRight="16.0dip"
-                android:scaleType="center"
+                android:layout_weight="0.05"
+                android:onClick="clickBack"
                 android:src="@drawable/ic_arrow_back_black_24dp"
                 android:tint="@color/white" />
 
@@ -36,7 +36,7 @@
                 android:layout_width="0.0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                android:text="Add Diary"
+                android:text="  Add Diary"
                 android:textColor="@color/white"
                 android:textSize="18.0sp" />
 

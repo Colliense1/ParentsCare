@@ -64,7 +64,7 @@ public class Parentslogin extends AppCompatActivity implements
     private FirebaseAuth mAuth;
     // [END declare_auth]
 
-    FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
 
     private boolean mVerificationInProgress = false;
@@ -275,25 +275,30 @@ public class Parentslogin extends AppCompatActivity implements
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+
+
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
 
+
                             FirebaseUser user = task.getResult().getUser();
-                            tv.setText(user.getPhoneNumber().toString());
+                            //tv.setText(user.getPhoneNumber().toString());
 
                             // [START_EXCLUDE]
+
                             updateUI(STATE_SIGNIN_SUCCESS, user);
-
-
                             // [END_EXCLUDE]
-                            Toast.makeText(Parentslogin.this, "Successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Parentslogin.this, "Login Successfully", Toast.LENGTH_SHORT).show();
+
                         } else {
                             // Sign in failed, display a message and update the UI
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
+
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                                 // The verification code entered was invalid
                                 // [START_EXCLUDE silent]
+
                                 mVerificationField.setError("Invalid code.");
                                 // [END_EXCLUDE]
                             }

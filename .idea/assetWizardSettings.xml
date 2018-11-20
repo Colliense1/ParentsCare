@@ -50,13 +50,18 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\Colliense podder\Desktop\pclogo.svg" />
-                                      <entry key="outputName" value="ic_launcher_splash" />
+                                      <entry key="imageAsset" value="E:\cpp\Android\ParentsCare\picture\pcare.png" />
+                                      <entry key="outputName" value="ic_launcher_pcare1" />
                                     </map>
                                   </option>
                                 </PersistentState>
                               </value>
                             </entry>
+                          </map>
+                        </option>
+                        <option name="values">
+                          <map>
+                            <entry key="outputIconType" value="LAUNCHER_LEGACY" />
                           </map>
                         </option>
                       </PersistentState>
@@ -94,11 +99,11 @@
                           <map>
                             <entry key="assetSourceType" value="FILE" />
                             <entry key="color" value="0c0603" />
-                            <entry key="height" value="356" />
-                            <entry key="outputName" value="ic_logo1" />
+                            <entry key="height" value="360" />
+                            <entry key="outputName" value="ic_parents_care1" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="C:\Users\Colliense podder\Desktop\logo1.svg" />
-                            <entry key="width" value="400" />
+                            <entry key="sourceFile" value="E:\cpp\Android\ParentsCare\picture\parents Care1.svg" />
+                            <entry key="width" value="360" />
                           </map>
                         </option>
                       </PersistentState>

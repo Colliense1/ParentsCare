@@ -23,8 +23,8 @@
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.7"
                 android:onClick="clickBack"
                 android:src="@drawable/ic_arrow_back_black_24dp" />
 
