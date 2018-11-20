@@ -69,7 +69,7 @@ public class MedicineByDateAdopter extends RecyclerView.Adapter<MedicineByDateAd
                             medicinePerRows.get(position).setMedicineTakenYesOrNo(1);
                             notifyDataSetChanged();
                         } else {
-                            Toast.makeText(mContext, "You can't upate this now", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mContext, "You can't update this now", Toast.LENGTH_SHORT).show();
                         }
                         break;
                     case R.id.NotTakenID:
@@ -81,7 +81,7 @@ public class MedicineByDateAdopter extends RecyclerView.Adapter<MedicineByDateAd
                             medicinePerRows.get(position).setMedicineTakenYesOrNo(0);
                             notifyDataSetChanged();
                         } else {
-                            Toast.makeText(mContext, "You can't upate this now", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mContext, "You can't update this now", Toast.LENGTH_SHORT).show();
                         }
                         break;
                     case R.id.ResuduleID:

@@ -103,7 +103,8 @@
         <activity android:name=".AddDoctorActivity" />
         <activity android:name=".MyDiary" />
         <activity android:name=".AddDiaryActivity" />
-        <activity android:name=".MyAppointments"></activity>
+        <activity android:name=".MyAppointments" />
+        <activity android:name=".AddMyAppointsmentsActivity"></activity>
     </application>
 
 </manifest>

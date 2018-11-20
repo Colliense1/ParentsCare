@@ -143,6 +143,8 @@
     <string-array name="take_arrays">
         <item>Tablet</item>
         <item>Insulin</item>
+        <item>Syrup</item>
+
     </string-array>
     <string-array name="tablet_arrays">
         <item>1 tab</item>

@@ -49,7 +49,10 @@ public class MedicineDashboardRecyclerViewAdapter extends RecyclerView.Adapter<M
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView medicinenameTV, deleteTV, viewTV, updateTV;
+        TextView medicinenameTV;
+        TextView  deleteTV;
+        TextView  viewTV;
+        TextView  updateTV;
 
         ViewHolder(View itemView) {
             super(itemView);

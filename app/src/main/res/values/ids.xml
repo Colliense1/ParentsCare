@@ -450,4 +450,6 @@
     <item type="id" name="view_offset_helper">false</item>
     <item type="id" name="visible">false</item>
     <item type="id" name="waitForMedicineSync">false</item>
+    <item type="id" name="editAppointmentTitle">false</item>
+    <item type="id" name="linearLayoutAddAppointments">false</item>
 </resources>

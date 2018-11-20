@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffe03943"
+    android:background="#e6e0e0"
     android:orientation="vertical"
     tools:context=".AddMedicineActivity">
 
@@ -13,7 +13,7 @@
         theme="@style/MyToolbarStyle"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#ffb42e35"
+        android:background="#336fcf"
         app:popupTheme="@style/Theme.AppCompat.NoActionBar">
 
         <LinearLayout

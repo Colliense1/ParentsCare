@@ -214,8 +214,12 @@ public class MedicineManagementDatabase {
         contentValues.put(DatabaseHelper.MEDICINE_TYPE, medicineType);
         ContentValues contentValue = new ContentValues();
         contentValue.put(DatabaseHelper.MEDICINE_NAME_TABLE2, mName);
-        long update1 = sqLiteDatabase.update(DatabaseHelper.TABLE_MEDICINE_DETAILS, contentValues, databaseHelper.MEDICINE_NAME + " =? ", new String[]{oldMedicineName});
-        long update2 = sqLiteDatabase.update(DatabaseHelper.TABLE_MEDICINE_DATE_TIME, contentValue, databaseHelper.MEDICINE_NAME_TABLE2 + " =? ", new String[]{oldMedicineName});
+        long update1 = sqLiteDatabase.update(DatabaseHelper.TABLE_MEDICINE_DETAILS,
+                contentValues, databaseHelper.MEDICINE_NAME + " =? ",
+                new String[]{oldMedicineName});
+        long update2 = sqLiteDatabase.update(DatabaseHelper.TABLE_MEDICINE_DATE_TIME,
+                contentValue, databaseHelper.MEDICINE_NAME_TABLE2 + " =? ",
+                new String[]{oldMedicineName});
         return update2;
     }
 

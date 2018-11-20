@@ -1,5 +1,6 @@
 package com.example.colliensepodder.parentscare;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -27,5 +28,11 @@ public class MyAppointments extends AppCompatActivity {
 
     public void clickBack(View view) {
         this.finish();
+    }
+
+    public void goToAddAppointmentActivity(View view) {
+        Intent ii=new Intent(this,AddMyAppointsmentsActivity.class);
+        //ii.putExtra("mode","1");
+        startActivity(ii);
     }
 }
