@@ -176,14 +176,14 @@
 
                     <Button
                         android:id="@id/textViewDone"
-                        android:layout_width="50dp"
+                        android:layout_width="55dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:background="@drawable/background_button"
                         android:onClick="clickAddContact"
                         android:text="Add"
                         android:textColor="#fff"
-                        android:textSize="15.0sp"
+                        android:textSize="14.0sp"
 
                         />
                 </LinearLayout>

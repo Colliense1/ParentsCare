@@ -126,16 +126,17 @@
             <EditText
                 android:textSize="14.0sp"
                 android:textColor="#2b2a2a"
-                android:textColorHint="#121010"
-                android:id="@id/editTextSpecialty"
+                android:textColorHint="#afabab"
+                android:id="@id/editTextSpeciality"
                 android:background="@null"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8.0dip"
-                android:hint="Select Specialty"
+                android:hint="Select Speciality"
                 android:maxLines="1"
                 android:drawableRight="@drawable/icon_arrow_down"
                 android:inputType="none"
+                android:onClick="click"
                 android:drawableEnd="@drawable/icon_arrow_down" />
 
             <View
@@ -183,7 +184,7 @@
             <EditText
                 android:textSize="14.0sp"
                 android:textColor="#403f3f"
-                android:textColorHint="#1d1b1b"
+                android:textColorHint="#8c8b8b"
                 android:id="@id/editTextEmail"
                 android:background="@null"
                 android:layout_width="fill_parent"
@@ -233,7 +234,7 @@
 
                     <Button
                         android:onClick="clickAddDoctor"
-                        android:textSize="15.0sp"
+                        android:textSize="13.0sp"
                         android:textColor="#fff"
                         android:layout_gravity="end"
                         android:id="@id/textViewDone"

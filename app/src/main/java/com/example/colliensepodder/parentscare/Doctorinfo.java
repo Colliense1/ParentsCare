@@ -2,14 +2,22 @@
 package com.example.colliensepodder.parentscare;
 
 public class Doctorinfo {
+
     private String doctorName;
     private String doctorNumber;
     private String doctorEmail;
+    public String Speciality;
 
-    public Doctorinfo(String doctorName, String doctorNumber,String doctorEmail ) {
+
+    private String avatar;
+
+
+    public Doctorinfo(String doctorName, String doctorNumber,String doctorEmail,String Speciality ) {
         this.doctorName = doctorName;
         this.doctorNumber = doctorNumber;
         this.doctorEmail = doctorEmail;
+        this.Speciality = Speciality;
+        //this.avatar = avatar;
     }
 
     public String getDoctorName() {
@@ -22,6 +30,12 @@ public class Doctorinfo {
     public String getDoctorEmail(){
         return doctorEmail;
     }
+    public String getSpeciality(){
+        return Speciality;
+    }
+//    public String getAvatar(){
+//        return avatar;
+//    }
 
 
 }

@@ -34,20 +34,6 @@ public class MedicineManagementDatabase {
         return 0;
     }
 
-
-    public long addDoctor(Doctorinfo doctorinfos) {
-        SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(DatabaseHelper.DOCTOR_NAME, doctorinfos.getDoctorName());
-        contentValues.put(DatabaseHelper.DOCTOR_NUMBER, doctorinfos.getDoctorNumber());
-        contentValues.put(DatabaseHelper.DOCTOR_EMAIL, doctorinfos.getDoctorEmail());
-
-       long inserted = sqLiteDatabase.insert(DatabaseHelper.DOCTOR_TABLE, null, contentValues);
-
-        return inserted;
-    }
-
-
     public int getMonth(String date) {
 
         int str1 = date.indexOf("/");
@@ -117,6 +103,7 @@ public class MedicineManagementDatabase {
         }
         return MedicineName;
     }
+
     public ArrayList<Contact> retriveAllEmergencyContact() {
         ArrayList<Contact> row = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
@@ -129,38 +116,9 @@ public class MedicineManagementDatabase {
                 String mContactEmail = cursor.getString(cursor.getColumnIndex(DatabaseHelper.CONTACT_EMAIL));
 
                 // int takenYesOrNo = 0 ;
-                row.add(new Contact(mContactName,mContactNumber,mContactEmail));
+                row.add(new Contact(mContactName, mContactNumber, mContactEmail));
             } while (cursor.moveToNext());
         }
-        return row;
-    }
-
-    public ArrayList<Doctorinfo> retriveAllDoctor() {
-        ArrayList<Doctorinfo> row = new ArrayList<>();
-
-
-        try {
-            SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
-            String selectQuery1 = "Select * from " + DatabaseHelper.DOCTOR_TABLE;
-            Cursor cursor = sqLiteDatabase.rawQuery(selectQuery1, null);
-            if (cursor.moveToFirst()) {
-                do {
-                    String mDoctorName = cursor.getString(cursor.getColumnIndex(DatabaseHelper.DOCTOR_NAME));
-                    String mDoctorNumber = cursor.getString(cursor.getColumnIndex(DatabaseHelper.DOCTOR_NUMBER));
-                    String mDoctorEmail = cursor.getString(cursor.getColumnIndex(DatabaseHelper.DOCTOR_EMAIL));
-
-                    // int takenYesOrNo = 0 ;
-                    row.add(new Doctorinfo(mDoctorName, mDoctorNumber, mDoctorEmail));
-
-                }
-                while (cursor.moveToNext());
-            }
-            }catch (Exception e){
-
-
-        }
-
-
         return row;
     }
 
@@ -180,7 +138,7 @@ public class MedicineManagementDatabase {
 
             }
 
-        }catch (Exception e ){
+        } catch (Exception e) {
 
         }
         return row;
@@ -258,24 +216,6 @@ public class MedicineManagementDatabase {
         return delete;
     }
 
-    //DELETE DOCTOR
-    public long deleteDoctor(String name) {
-        SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        long delete = sqLiteDatabase.delete(DatabaseHelper.DOCTOR_TABLE, databaseHelper.DOCTOR_NUMBER + " =? ", new String[]{name});
-
-        return delete;
-    }
-
-    //DELETE DIARY
-    public long deleteDiary(String name) {
-        SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        long delete = sqLiteDatabase.delete(DatabaseHelper.DIARY_TABLE, databaseHelper.DIARY_TEXT + " =? ", new String[]{name});
-
-        return delete;
-    }
-
 
     public ArrayList<Medicine> retriveAllMedicineInfo() {
         ArrayList<Medicine> medicines = new ArrayList<>();
@@ -335,6 +275,8 @@ public class MedicineManagementDatabase {
         }
         return 0;
     }
+
+    //ALL EMERGENCY CONTACT DATA
     public long addEmergencyContact(Contact contact) {
         SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -346,15 +288,59 @@ public class MedicineManagementDatabase {
 
         return insertedRow1;
     }
+
     public long updateEmergencyContact(Contact newContact, Contact updatedcontact) {
         SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.CONTACT_NAME, newContact.getContactName());
         contentValues.put(DatabaseHelper.CONTACT_NUMBER, newContact.getContactNumber());
         contentValues.put(DatabaseHelper.CONTACT_EMAIL, newContact.getContactEmail());
-        long update1 = sqLiteDatabase.update(DatabaseHelper.TABLE_EMERGENCY_CONTACT, contentValues, databaseHelper.CONTACT_NAME + " =? and " + databaseHelper.CONTACT_NUMBER+ " =? ", new String[]{updatedcontact.getContactName(), updatedcontact.getContactNumber()});
+        long update1 = sqLiteDatabase.update(DatabaseHelper.TABLE_EMERGENCY_CONTACT, contentValues,
+                databaseHelper.CONTACT_NAME + " =? and "
+                        + databaseHelper.CONTACT_NUMBER + " =? ",
+                new String[]{updatedcontact.getContactName(),
+                        updatedcontact.getContactNumber()});
         return update1;
 
+    }
+
+    //DOCTORS ALL DATA
+    public ArrayList<Doctorinfo> retriveAllDoctor() {
+        ArrayList<Doctorinfo> row = new ArrayList<>();
+        try {
+            SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
+            String selectQuery1 = "Select * from " + DatabaseHelper.DOCTOR_TABLE;
+            Cursor cursor = sqLiteDatabase.rawQuery(selectQuery1, null);
+            if (cursor.moveToFirst()) {
+                do {
+                    String mDoctorName = cursor.getString(cursor.getColumnIndex(DatabaseHelper.DOCTOR_NAME));
+                    String mDoctorNumber = cursor.getString(cursor.getColumnIndex(DatabaseHelper.DOCTOR_NUMBER));
+                    String mDoctorEmail = cursor.getString(cursor.getColumnIndex(DatabaseHelper.DOCTOR_EMAIL));
+                    String mDoctorSpeciality = cursor.getString(cursor.getColumnIndex(DatabaseHelper.DOCTOR_SPECIALITY));
+
+                    // int takenYesOrNo = 0 ;
+                    row.add(new Doctorinfo(mDoctorName, mDoctorNumber, mDoctorEmail, mDoctorSpeciality));
+
+                }
+                while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+
+        }
+        return row;
+    }
+
+    public long addDoctor(Doctorinfo doctorinfos) {
+        SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(DatabaseHelper.DOCTOR_NAME, doctorinfos.getDoctorName());
+        contentValues.put(DatabaseHelper.DOCTOR_NUMBER, doctorinfos.getDoctorNumber());
+        contentValues.put(DatabaseHelper.DOCTOR_EMAIL, doctorinfos.getDoctorEmail());
+        contentValues.put(DatabaseHelper.DOCTOR_SPECIALITY, doctorinfos.getSpeciality());
+
+        long inserted = sqLiteDatabase.insert(DatabaseHelper.DOCTOR_TABLE, null, contentValues);
+
+        return inserted;
     }
 
     public long updateDoctor(Doctorinfo newdoctorinfo, Doctorinfo updateddoctor) {
@@ -363,18 +349,33 @@ public class MedicineManagementDatabase {
         contentValues.put(DatabaseHelper.DOCTOR_NAME, newdoctorinfo.getDoctorName());
         contentValues.put(DatabaseHelper.DOCTOR_NUMBER, newdoctorinfo.getDoctorNumber());
         contentValues.put(DatabaseHelper.DOCTOR_EMAIL, newdoctorinfo.getDoctorEmail());
+        contentValues.put(DatabaseHelper.DOCTOR_SPECIALITY, newdoctorinfo.getSpeciality());
+
 
         long update1 = sqLiteDatabase.update(DatabaseHelper.DOCTOR_TABLE, contentValues,
-                databaseHelper.DOCTOR_NAME + " =? AND "
-                        + databaseHelper.DOCTOR_NUMBER + " =? AND "
-                        + databaseHelper.DOCTOR_EMAIL+ " =? ",
+                databaseHelper.DOCTOR_NAME + " =? and "
+                        + databaseHelper.DOCTOR_NUMBER + " =? and "
+                        + databaseHelper.DOCTOR_EMAIL + " =? and "
+                        + databaseHelper.DOCTOR_SPECIALITY + " =? ",
                 new String[]{updateddoctor.getDoctorName(),
                         updateddoctor.getDoctorNumber(),
-                        updateddoctor.getDoctorEmail()});
+                        updateddoctor.getDoctorEmail(),
+                        updateddoctor.getSpeciality()});
         return update1;
 
     }
 
+    //DELETE DOCTOR
+    public long deleteDoctor(String name) {
+        SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        long delete = sqLiteDatabase.delete(DatabaseHelper.DOCTOR_TABLE, databaseHelper.DOCTOR_NUMBER + " =? ", new String[]{name});
+
+        return delete;
+    }
+
+
+    //ALL DIARY DATA
     public long addDiary(Diary diary) {
         SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -393,8 +394,17 @@ public class MedicineManagementDatabase {
         long update1 = sqLiteDatabase.update(DatabaseHelper.DIARY_TABLE,
                 contentValues, databaseHelper.DIARY_TEXT + " =? ",
                 //+ databaseHelper.DIARY_TEXT + " =? ",
-        new String[]{ updateddiaries.getDiaryText()});
+                new String[]{updateddiaries.getDiaryText()});
         return update1;
 
+    }
+
+    //DELETE DIARY
+    public long deleteDiary(String name) {
+        SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        long delete = sqLiteDatabase.delete(DatabaseHelper.DIARY_TABLE, databaseHelper.DIARY_TEXT + " =? ", new String[]{name});
+
+        return delete;
     }
 }

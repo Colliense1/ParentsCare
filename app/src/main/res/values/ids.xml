@@ -102,7 +102,7 @@
     <item type="id" name="editTextRelation">false</item>
     <item type="id" name="editTextReply">false</item>
     <item type="id" name="editTextSearch">false</item>
-    <item type="id" name="editTextSpecialty">false</item>
+    <item type="id" name="editTextSpeciality">false</item>
     <item type="id" name="editTextStartDate">false</item>
     <item type="id" name="editTextSubject">false</item>
     <item type="id" name="editTextSugarLevel">false</item>

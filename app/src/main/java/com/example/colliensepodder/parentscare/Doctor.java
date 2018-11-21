@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Doctor extends AppCompatActivity {
 
@@ -18,6 +19,7 @@ public class Doctor extends AppCompatActivity {
     RecyclerView doctorsRV;
     LinearLayout Rlayout;
     LinearLayout LinearLayoutNoDoctor;
+    LinearLayout linearLayoutAddDoctor;
     TextView headerDoctors;
     TextView textViewAddDoctor;
     TextView textView3;
@@ -31,9 +33,12 @@ public class Doctor extends AppCompatActivity {
 
         Rlayout = (LinearLayout) findViewById(R.id.rlayout);
         LinearLayoutNoDoctor = (LinearLayout) findViewById(R.id.linearLayoutNoDoctor);
+        linearLayoutAddDoctor = (LinearLayout) findViewById(R.id.linearLayoutAddDoctor);
         headerDoctors= (TextView)findViewById(R.id.headerDoctors);
         textViewAddDoctor= (TextView)findViewById(R.id.textViewAddDoctor);
+
     }
+    
     @Override
     protected void onResume() {
 
@@ -45,6 +50,7 @@ public class Doctor extends AppCompatActivity {
             LinearLayoutNoDoctor.setVisibility(View.INVISIBLE);
             LinearLayoutManager LayoutManagaer = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
             doctorsRV.setLayoutManager(LayoutManagaer);
+
             DoctorAdopter adapter = new DoctorAdopter(this, doctorinfos, new Callback() {
                 @Override
                 public void Result(String result) {
@@ -55,6 +61,7 @@ public class Doctor extends AppCompatActivity {
         }
         else {
             LinearLayoutNoDoctor.setVisibility(View.VISIBLE);
+
         }
     }
 

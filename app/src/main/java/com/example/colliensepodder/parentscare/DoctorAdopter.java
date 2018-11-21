@@ -47,6 +47,7 @@ public class DoctorAdopter extends RecyclerView.Adapter<DoctorAdopter.ViewHolder
         holder.DoctorNameTV.setText(doctorinfos.get(position).getDoctorName());
         holder.DoctorNumberTV.setText(doctorinfos.get(position).getDoctorNumber());
         holder.DoctorEmailTV.setText(doctorinfos.get(position).getDoctorEmail());
+        holder.DoctorspecialityTV.setText(doctorinfos.get(position).getSpeciality());
         holder.editsdoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,6 +101,7 @@ public class DoctorAdopter extends RecyclerView.Adapter<DoctorAdopter.ViewHolder
         TextView DoctorNameTV;
         TextView DoctorNumberTV;
         TextView DoctorEmailTV;
+        TextView DoctorspecialityTV;
         TextView dotssaa;
         TextView editsdoctor;
         LinearLayout doctorCallLinearLayout;
@@ -109,6 +111,7 @@ public class DoctorAdopter extends RecyclerView.Adapter<DoctorAdopter.ViewHolder
             DoctorNameTV = itemView.findViewById(R.id.DoctorNameTV);
             DoctorNumberTV = itemView.findViewById(R.id.DoctorNumberTV);
             DoctorEmailTV = itemView.findViewById(R.id.DoctorEmailTV);
+            DoctorspecialityTV = itemView.findViewById(R.id.DoctorspecialityTV);
             dotssaa = itemView.findViewById(R.id.dotssaa);
             doctorCallLinearLayout = itemView.findViewById(R.id.doctorCallLinearLayout);
 
