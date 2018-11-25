@@ -9,12 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
-//import com.example.colliensepodder.parentscare.BmiActivity.BMICalculator.Bmi;
-
 import com.facebook.appevents.AppEventsConstants;
 
-import static java.lang.Double.*;
 
 public class BmiActivity extends AppCompatActivity {
 
@@ -97,7 +93,6 @@ public class BmiActivity extends AppCompatActivity {
                 create.show();
             }
         });
-
     }
 
     public static class BMICalculator {
@@ -144,7 +139,5 @@ public class BmiActivity extends AppCompatActivity {
     public void clickBack(View view) {
         this.finish();
     }
-
-
 
 }
