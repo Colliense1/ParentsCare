@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <item type="id" name="editMyAppointmentTitle">false</item>
     <item type="id" name="action0">false</item>
     <item type="id" name="action_bar">false</item>
     <item type="id" name="action_bar_activity_content">false</item>
@@ -450,6 +451,6 @@
     <item type="id" name="view_offset_helper">false</item>
     <item type="id" name="visible">false</item>
     <item type="id" name="waitForMedicineSync">false</item>
-    <item type="id" name="editAppointmentTitle">false</item>
+
     <item type="id" name="linearLayoutAddAppointments">false</item>
 </resources>

@@ -73,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="2dp"
                     android:text="01753740230"
                     android:textColor="#000"
                     android:textSize="17sp" />
@@ -84,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="2dp"
                     android:layout_toRightOf="@+id/imageViewAvatar"
                     android:text="colliensepodder25@gmail.com"
                     android:textColor="#000"

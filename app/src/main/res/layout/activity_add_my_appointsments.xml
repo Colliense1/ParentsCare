@@ -60,7 +60,7 @@
                 android:textSize="13.0sp" />
 
             <EditText
-                android:id="@id/editAppointmentTitle"
+                android:id="@id/editMyAppointmentTitle"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8.0dip"
@@ -95,7 +95,7 @@
                 android:background="@null"
                 android:drawableEnd="@drawable/icon_arrow_down"
                 android:drawableRight="@drawable/icon_arrow_down"
-                android:hint="Type Your Doctor Name"
+                android:hint="Select Your Doctor"
                 android:inputType="textPersonName|textCapWords"
                 android:maxLines="1"
                 android:textColor="#2b2a2a"
