@@ -41,13 +41,10 @@ public class BmiFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_bmi, container, false);
 
-
-
         height = (EditText) view.findViewById(R.id.height);
         weight = (EditText) view.findViewById(R.id.weight);
         result = (TextView) view.findViewById(R.id.result);
         calculate = (Button) view.findViewById(R.id.calculate);
-
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,9 +54,6 @@ public class BmiFragment extends Fragment {
 
         return view;
     }
-
-
-
     private void calculateBMI(){
         String heightstr = height.getText().toString();
         String weightstr = weight.getText().toString();
@@ -82,27 +76,34 @@ public class BmiFragment extends Fragment {
 
         if (Float.compare(bmi, 15f) <= 0) {
             bmiLabel = "Very Severely underweight";
-        } else if (Float.compare(bmi, 15f) > 0 && Float.compare(bmi, 16f) <= 0) {
+        }
+        else if (Float.compare(bmi, 15f) > 0 && Float.compare(bmi, 16f) <= 0) {
             bmiLabel = "Severely underweight";
 
-        } else if (Float.compare(bmi, 16f) > 0 && Float.compare(bmi, 18.5f) <= 0) {
+        }
+        else if (Float.compare(bmi, 16f) > 0 && Float.compare(bmi, 18.5f) <= 0) {
             bmiLabel = "Underweight";
 
-        } else if (Float.compare(bmi, 18.5f) > 0 && Float.compare(bmi, 25f) <= 0) {
+        }
+        else if (Float.compare(bmi, 18.5f) > 0 && Float.compare(bmi, 25f) <= 0) {
             bmiLabel = "Normal";
 
-        } else if (Float.compare(bmi, 25f) > 0 && Float.compare(bmi, 30f) <= 0) {
+        }
+        else if (Float.compare(bmi, 25f) > 0 && Float.compare(bmi, 30f) <= 0) {
             bmiLabel = "Overweight";
 
-        } else if (Float.compare(bmi, 30f) > 0 && Float.compare(bmi, 35f) <= 0) {
+        }
+        /*else if (Float.compare(bmi, 30f) > 0 && Float.compare(bmi, 35f) <= 0) {
             bmiLabel = "obese class I";
 
-        } else if (Float.compare(bmi, 35f) > 0 && Float.compare(bmi, 40f) <= 0) {
+        }
+        else if (Float.compare(bmi, 35f) > 0 && Float.compare(bmi, 40f) <= 0) {
             bmiLabel = "obese class II";
 
-        } else {
-            bmiLabel = "obese class III";
         }
+        else {
+            bmiLabel = "obese class III";
+        }*/
 
         bmiLabel = bmi + "\n" + bmiLabel;
         result.setText(bmiLabel);

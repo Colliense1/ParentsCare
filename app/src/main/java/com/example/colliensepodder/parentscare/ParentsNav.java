@@ -149,11 +149,14 @@ public class ParentsNav extends AppCompatActivity
 
         } else if (id == R.id.nav_bmi) {
 
-            BmiFragment bmiFragment = new BmiFragment();
+            Intent i = new Intent(this,BmiActivity.class);
+            startActivity(i);
+
+            /*BmiFragment bmiFragment = new BmiFragment();
             FragmentManager manager = getSupportFragmentManager();
             manager.beginTransaction().replace(R.id.rel,
                     bmiFragment,
-                    bmiFragment.getTag()).commit();
+                    bmiFragment.getTag()).commit();*/
 
         } else if (id == R.id.nav_signout) {
 

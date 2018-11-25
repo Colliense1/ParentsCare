@@ -181,7 +181,7 @@
     <item type="id" name="linearLayoutAddTemperature">false</item>
     <item type="id" name="linearLayoutAddWeight">false</item>
     <item type="id" name="linearLayoutBirthControl">false</item>
-    <item type="id" name="linearLayoutCalculateBmi">false</item>
+    <item type="id" name="lLayoutCalculateBodymi">false</item>
     <item type="id" name="linearLayoutCallMsgEmContacts">false</item>
     <item type="id" name="linearLayoutData">false</item>
     <item type="id" name="linearLayoutDaysInterval">false</item>

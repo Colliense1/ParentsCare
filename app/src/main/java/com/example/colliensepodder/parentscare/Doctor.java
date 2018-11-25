@@ -38,7 +38,7 @@ public class Doctor extends AppCompatActivity {
         textViewAddDoctor= (TextView)findViewById(R.id.textViewAddDoctor);
 
     }
-    
+
     @Override
     protected void onResume() {
 

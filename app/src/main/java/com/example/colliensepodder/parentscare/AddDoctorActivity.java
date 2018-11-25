@@ -104,7 +104,10 @@ public class AddDoctorActivity extends AppCompatActivity {
         } else if (editTextPhone.getText().toString().equals("")) {
             editTextPhone.setError("This field can't be empty");
             return;
-        } else if (editTextEmail.getText().toString().equals("")) {
+        } else if (editTextSpeciality.getText().toString().equals("")) {
+            editTextSpeciality.setError("This field can't be empty");
+            return;
+        }else if (editTextEmail.getText().toString().equals("")) {
             editTextEmail.setError("This field can't be empty");
             return;
         } else {
