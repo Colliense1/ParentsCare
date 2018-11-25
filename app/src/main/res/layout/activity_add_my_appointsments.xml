@@ -83,7 +83,7 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Name"
+                android:text="Doctor Name"
                 android:textColor="#ffe03943"
                 android:textSize="13.0sp" />
 
@@ -93,6 +93,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8.0dip"
                 android:background="@null"
+                android:drawableEnd="@drawable/icon_arrow_down"
+                android:drawableRight="@drawable/icon_arrow_down"
                 android:hint="Type Your Doctor Name"
                 android:inputType="textPersonName|textCapWords"
                 android:maxLines="1"
@@ -120,7 +122,7 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Mobile Number"
+                android:text="Date &amp; Time"
                 android:textColor="#ffe03943"
                 android:textSize="13.0sp" />
 
@@ -130,7 +132,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8.0dip"
                 android:background="@null"
-                android:hint="Type Mobile Number"
+                android:drawableEnd="@drawable/icon_arrow_down"
+                android:drawableRight="@drawable/icon_arrow_down"
+                android:hint="Pick a Date &amp; Time"
                 android:inputType="phone"
                 android:maxLength="11"
                 android:maxLines="1"
