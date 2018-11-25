@@ -87,8 +87,8 @@
                         android:inputType="none"
                         android:maxLength="11"
                         android:maxLines="1"
-                        android:textColor="@color/eightySevenPercentOpaqueBlack"
-                        android:textColorHint="@color/fiftyFivePercentOpaqueBlack"
+                        android:textColor="#2e2c2c"
+                        android:textColorHint="#646262"
                         android:textSize="14.0sp" />
 
                     <View
@@ -96,7 +96,7 @@
                         android:layout_height="1.0dip"
                         android:layout_marginBottom="16.0dip"
                         android:layout_marginTop="8.0dip"
-                        android:background="@color/divider" />
+                        android:background="#bcb8b8" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -117,8 +117,8 @@
                         android:inputType="none"
                         android:maxLength="11"
                         android:maxLines="1"
-                        android:textColor="@color/eightySevenPercentOpaqueBlack"
-                        android:textColorHint="@color/fiftyFivePercentOpaqueBlack"
+                        android:textColor="#2e2c2c"
+                        android:textColorHint="#646262"
                         android:textSize="14.0sp" />
 
                     <View
@@ -126,7 +126,7 @@
                         android:layout_height="1.0dip"
                         android:layout_marginBottom="16.0dip"
                         android:layout_marginTop="8.0dip"
-                        android:background="@color/divider" />
+                        android:background="#bcb8b8" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -156,8 +156,8 @@
                 android:inputType="number"
                 android:maxLength="11"
                 android:maxLines="1"
-                android:textColor="@color/eightySevenPercentOpaqueBlack"
-                android:textColorHint="@color/fiftyFivePercentOpaqueBlack"
+                android:textColor="#2e2c2c"
+                android:textColorHint="#646262"
                 android:textSize="14.0sp" />
 
             <View
@@ -165,7 +165,7 @@
                 android:layout_height="1.0dip"
                 android:layout_marginBottom="16.0dip"
                 android:layout_marginTop="8.0dip"
-                android:background="@color/divider" />
+                android:background="#bcb8b8" />
         </LinearLayout>
     </LinearLayout>
 
@@ -191,7 +191,7 @@
             android:gravity="center"
             android:text="CALCULATE"
             android:textAllCaps="true"
-            android:textColor="@color/white"
+            android:textColor="#fff"
             android:textSize="16.0sp" />
     </LinearLayout>
 
