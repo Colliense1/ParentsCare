@@ -2,7 +2,9 @@ package com.example.colliensepodder.parentscare;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -19,9 +21,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.colliensepodder.parentscare.Helper.LocalHelper;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
+
+import io.paperdb.Paper;
 
 public class ParentsNav extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -32,9 +37,23 @@ public class ParentsNav extends AppCompatActivity
     public static TextView tv;
 
     @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocalHelper.onAttach(newBase,"en"));
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parents_nav);
+
+
+        //change language
+        Paper.init(this);
+        String language = Paper.book().read("language");
+        if (language==null)
+            Paper.book().write("language","en");
+        updateView((String)Paper.book().read("language"));
+
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -68,6 +87,11 @@ public class ParentsNav extends AppCompatActivity
 
     }
 
+    private void updateView(String lang) {
+        Context context = LocalHelper.setLocale(this,lang);
+        Resources resources = context.getResources();
+    }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -88,17 +112,18 @@ public class ParentsNav extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        int id = item.getItemId();
+        if (id == R.id.language_en) {
+            Paper.book().write("language","en");
+            updateView((String)Paper.book().read("language"));
+            //return true;
+        }else if (id == R.id.language_bn){
+            Paper.book().write("language","bn");
+            updateView((String)Paper.book().read("language"));
         }
 
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

@@ -38,6 +38,7 @@ dependencies {
     implementation 'devs.mulham.horizontalcalendar:horizontalcalendar:1.1.7'
     implementation 'net.danlew:android.joda:2.9.4.1'
     implementation 'com.android.support:support-annotations:27.1.1'
+    implementation 'io.paperdb:paperdb:2.5'
 
 }
 

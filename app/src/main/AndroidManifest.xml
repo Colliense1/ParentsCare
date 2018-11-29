@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
+        android:name=".MainApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_pcare1"
         android:label="@string/app_name"
@@ -106,7 +107,7 @@
         <activity android:name=".MyAppointments" />
         <activity android:name=".AddMyAppointsmentsActivity" />
         <activity android:name=".BmiActivity" />
-        <activity android:name=".SelectDoctorActivity"></activity>
+        <activity android:name=".SelectDoctorActivity" />
     </application>
 
 </manifest>
