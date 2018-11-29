@@ -88,7 +88,7 @@ public class EmergencyContactAdopter extends RecyclerView.Adapter<EmergencyConta
 
             }
         });
-        holder.MedicineCallLinearLayout.setOnClickListener(new View.OnClickListener() {
+        holder.emergencyContactTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String phone = String.valueOf(contacts.get(position).getContactNumber());
@@ -113,13 +113,14 @@ public class EmergencyContactAdopter extends RecyclerView.Adapter<EmergencyConta
         TextView dotss;
         TextView edits;
         LinearLayout MedicineCallLinearLayout;
+        TextView emergencyContactTV;
 
         ViewHolder(View itemView) {
             super(itemView);
             contactNameTV = itemView.findViewById(R.id.ContactNameTV);
             contactNumberTV = itemView.findViewById(R.id.ContactNumberTV);
             ContactEmailTV = itemView.findViewById(R.id.ContactEmailTV);
-
+            emergencyContactTV= itemView.findViewById(R.id.emergencyContactTV);
             dotss = itemView.findViewById(R.id.dotssa);
             MedicineCallLinearLayout = itemView.findViewById(R.id.MedicineCallLinearLayout);
 

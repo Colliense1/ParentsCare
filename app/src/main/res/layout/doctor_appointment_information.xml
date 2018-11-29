@@ -43,30 +43,17 @@
                     app:civ_fill_color="#ff979797" />
 
                 <TextView
-                    android:id="@+id/DoctorNameTV"
+                    android:id="@+id/DoctorAppointmentTitleTV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="Cpp"
+                    android:textStyle="bold"
                     android:textColor="#000"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/DoctorspecialityTV"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="3dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_toRightOf="@+id/imageViewAvatar"
-                    android:text="Nurology"
-                    android:textColor="#000"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/DoctorNumberTV"
+                    android:id="@+id/DoctorAppointmentNameTV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
@@ -77,7 +64,7 @@
                     android:textSize="17sp" />
 
                 <TextView
-                    android:id="@+id/DoctorEmailTV"
+                    android:id="@+id/DoctorAppointmentLocationTV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="3dp"
@@ -91,16 +78,15 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/editsdoctor"
+                android:id="@+id/editsdoctorappointment"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:drawableLeft="@drawable/ic_edit_black_24dp"
                 android:gravity="center"
                 android:paddingLeft="20dp" />
-
             <TextView
-                android:id="@+id/dotssaa"
+                android:id="@+id/deletedoctorappointment"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"

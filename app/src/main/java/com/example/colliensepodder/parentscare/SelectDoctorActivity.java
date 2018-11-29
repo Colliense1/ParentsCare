@@ -11,9 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class Doctor extends AppCompatActivity {
+public class SelectDoctorActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     RecyclerView doctorsRV;
@@ -22,12 +21,11 @@ public class Doctor extends AppCompatActivity {
     LinearLayout linearLayoutAddDoctor;
     TextView headerDoctors;
     TextView textViewAddDoctor;
-    TextView textView3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctor);
+        setContentView(R.layout.activity_select_doctor);
 
         toolbar= (Toolbar)findViewById(R.id.toolbar);
         Rlayout = (LinearLayout) findViewById(R.id.rlayout);
@@ -35,7 +33,6 @@ public class Doctor extends AppCompatActivity {
         linearLayoutAddDoctor = (LinearLayout) findViewById(R.id.linearLayoutAddDoctor);
         headerDoctors= (TextView)findViewById(R.id.headerDoctors);
         textViewAddDoctor= (TextView)findViewById(R.id.textViewAddDoctor);
-
     }
 
     @Override

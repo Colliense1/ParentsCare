@@ -9,7 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,7 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 
-public class DoctorAdopter extends RecyclerView.Adapter<DoctorAdopter.ViewHolder> {
+public class SelectDoctorAdapter extends RecyclerView.Adapter<SelectDoctorAdapter.ViewHolder> {
 
     Context mContext;
 
@@ -28,7 +27,7 @@ public class DoctorAdopter extends RecyclerView.Adapter<DoctorAdopter.ViewHolder
 
     Callback callback;
 
-    public DoctorAdopter(Context mContext, ArrayList<Doctorinfo> doctorinfos, Callback callback) {
+    public SelectDoctorAdapter(Context mContext, ArrayList<Doctorinfo> doctorinfos, Callback callback) {
         this.layoutInflater = LayoutInflater.from(mContext);
         this.mContext = mContext;
         this.doctorinfos = doctorinfos;
@@ -37,14 +36,14 @@ public class DoctorAdopter extends RecyclerView.Adapter<DoctorAdopter.ViewHolder
     }
 
     @Override
-    public DoctorAdopter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public SelectDoctorAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = layoutInflater.inflate(R.layout.doctor_information, parent, false);
-        return new DoctorAdopter.ViewHolder(view);
+        return new SelectDoctorAdapter.ViewHolder(view);
     }
 
 
     @Override
-    public void onBindViewHolder(DoctorAdopter.ViewHolder holder, final int position) {
+    public void onBindViewHolder(SelectDoctorAdapter.ViewHolder holder, final int position) {
         holder.DoctorNameTV.setText(doctorinfos.get(position).getDoctorName());
         holder.DoctorNumberTV.setText(doctorinfos.get(position).getDoctorNumber());
         holder.DoctorEmailTV.setText(doctorinfos.get(position).getDoctorEmail());
@@ -91,7 +90,6 @@ public class DoctorAdopter extends RecyclerView.Adapter<DoctorAdopter.ViewHolder
         });
 
     }
-
 
     @Override
     public int getItemCount() {

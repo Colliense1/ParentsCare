@@ -407,4 +407,70 @@ public class MedicineManagementDatabase {
 
         return delete;
     }
+
+
+    //DOCTORS APPOINTMENT ALL DATA
+    public ArrayList<AppointmentInfo> retriveAllDoctorAppointment() {
+        ArrayList<AppointmentInfo> row = new ArrayList<>();
+        try {
+            SQLiteDatabase sqLiteDatabase = databaseHelper.getReadableDatabase();
+            String selectQuery1 = "Select * from " + DatabaseHelper.APPOINTMENT_TABLE;
+            Cursor cursor = sqLiteDatabase.rawQuery(selectQuery1, null);
+            if (cursor.moveToFirst()) {
+                do {
+                    String mDoctorAppointmentTitle= cursor.getString(cursor.getColumnIndex(DatabaseHelper.DOCTOR_APPOINTMENT_TITLE));
+                    String mDoctorAppointmentName = cursor.getString(cursor.getColumnIndex(DatabaseHelper.DOCTOR_APPOINTMENT_NAME));
+                    String mDoctorAppointmentLocation = cursor.getString(cursor.getColumnIndex(DatabaseHelper.DOCTOR_APPOINTMENT_LOCATION));
+
+                    // int takenYesOrNo = 0 ;
+                    row.add(new AppointmentInfo(mDoctorAppointmentTitle, mDoctorAppointmentName, mDoctorAppointmentLocation));
+
+                }
+                while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+
+        }
+        return row;
+    }
+
+    public long addDoctorAppointment(AppointmentInfo appointmentInfo) {
+        SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(DatabaseHelper.DOCTOR_APPOINTMENT_TITLE, appointmentInfo.getDoctorAppointmentTitle());
+        contentValues.put(DatabaseHelper.DOCTOR_APPOINTMENT_NAME, appointmentInfo.getDoctorAppointmentName());
+        contentValues.put(DatabaseHelper.DOCTOR_APPOINTMENT_LOCATION, appointmentInfo.getDoctorAppointmentLocation());
+
+        long inserted = sqLiteDatabase.insert(DatabaseHelper.APPOINTMENT_TABLE, null, contentValues);
+
+        return inserted;
+    }
+
+    public long updateDoctorAppointment(AppointmentInfo newappointmentinfo, AppointmentInfo updateddoctorappointment) {
+        SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(DatabaseHelper.DOCTOR_APPOINTMENT_TITLE, newappointmentinfo.getDoctorAppointmentTitle());
+        contentValues.put(DatabaseHelper.DOCTOR_APPOINTMENT_NAME, newappointmentinfo.getDoctorAppointmentName());
+        contentValues.put(DatabaseHelper.DOCTOR_APPOINTMENT_LOCATION, newappointmentinfo.getDoctorAppointmentLocation());
+
+        long update1 = sqLiteDatabase.update(DatabaseHelper.APPOINTMENT_TABLE, contentValues,
+                databaseHelper.DOCTOR_APPOINTMENT_TITLE + " =? and "
+                        + databaseHelper.DOCTOR_APPOINTMENT_NAME + " =? and "
+                        + databaseHelper.DOCTOR_APPOINTMENT_LOCATION + " =? ",
+                new String[]{updateddoctorappointment.getDoctorAppointmentTitle(),
+                        updateddoctorappointment.getDoctorAppointmentName(),
+                        updateddoctorappointment.getDoctorAppointmentLocation()});
+        return update1;
+
+    }
+
+    //DELETE DOCTORAPPOINTMENT
+    public long deleteDoctorAppointment(String name) {
+        SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        long delete = sqLiteDatabase.delete(DatabaseHelper.APPOINTMENT_TABLE, databaseHelper.DOCTOR_APPOINTMENT_TITLE + " =? ", new String[]{name});
+
+        return delete;
+    }
+
 }

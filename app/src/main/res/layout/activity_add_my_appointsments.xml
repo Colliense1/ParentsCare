@@ -88,7 +88,7 @@
                 android:textSize="13.0sp" />
 
             <EditText
-                android:id="@id/editTextName"
+                android:id="@id/editMyAppointmentName"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8.0dip"
@@ -115,7 +115,6 @@
                 android:layout_marginBottom="16.0dip"
                 android:orientation="horizontal">
 
-
             </LinearLayout>
 
 
@@ -127,7 +126,7 @@
                 android:textSize="13.0sp" />
 
             <EditText
-                android:id="@id/editTextPhone"
+                android:id="@id/editTimeAppointmentPicker"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8.0dip"

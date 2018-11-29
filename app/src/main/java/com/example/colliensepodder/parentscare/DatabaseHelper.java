@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "Medicine_reminder";
 
-    public static final int DATABASE_VERSION = 13;
+    public static final int DATABASE_VERSION = 14;
 
     //TABLE1
     public static final String TABLE_MEDICINE_DETAILS = "table_medicine_details";
@@ -65,6 +65,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
    public static final String CREATE_DIARY_TABLE_NAME_QUERY = "create table if not exists " + DIARY_TABLE
            +"(" + DIARY_TEXT + " text);";
 
+    //TABLE6 FOR APPOINTMENT
+    public static final String APPOINTMENT_TABLE = "appointment_table";
+    public static final String DOCTOR_APPOINTMENT_TITLE = "doctor_appointment_title";
+    public static final String DOCTOR_APPOINTMENT_NAME = "doctor_appointment_name";
+    public static final String DOCTOR_APPOINTMENT_LOCATION = "doctor_appointment_location";
+
+    public static final String CREATE_DOCTOR_APPOINTMENT_TABLE_NAME_QUERY = "create table if not exists " + APPOINTMENT_TABLE
+            +"(" + DOCTOR_APPOINTMENT_TITLE + " text, "
+            + DOCTOR_APPOINTMENT_NAME + " text, "
+            + DOCTOR_APPOINTMENT_LOCATION + " text);";
+
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -73,6 +85,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_EMERGENCY_CONTACT_QUERY);
         db.execSQL(CREATE_DOCTOR_TABLE_NAME_QUERY);
         db.execSQL(CREATE_DIARY_TABLE_NAME_QUERY);
+        db.execSQL(CREATE_DOCTOR_APPOINTMENT_TABLE_NAME_QUERY);
 
     }
 
@@ -83,6 +96,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("drop table if EXISTS " + TABLE_EMERGENCY_CONTACT);
         db.execSQL("drop table if EXISTS " + DOCTOR_TABLE);
         db.execSQL("drop table if EXISTS " + DIARY_TABLE);
+        db.execSQL("drop table if EXISTS " + APPOINTMENT_TABLE);
         onCreate(db);
     }
 }
