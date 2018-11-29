@@ -22,7 +22,9 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-
+/**
+ * Created by colliensepodder on 8/30/2018.
+ */
 
 public class EmergencyContactAdopter extends RecyclerView.Adapter<EmergencyContactAdopter.ViewHolder> {
     Context mContext;

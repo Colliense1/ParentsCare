@@ -14,6 +14,10 @@ import android.widget.Toolbar;
 
 import java.util.ArrayList;
 
+/**
+ * Created by colliensepodder on 8/30/2018.
+ */
+
 public class MyDiary extends AppCompatActivity {
     android.support.v7.widget.Toolbar toolbar;
     RecyclerView DiaryRV;

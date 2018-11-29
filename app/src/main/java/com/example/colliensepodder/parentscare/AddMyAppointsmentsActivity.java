@@ -20,7 +20,6 @@ public class AddMyAppointsmentsActivity extends AppCompatActivity {
     Button textViewDone;
     String mode;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +43,7 @@ public class AddMyAppointsmentsActivity extends AppCompatActivity {
         mode = getIntent().getStringExtra("mode");
         if (mode.equals("1")) {
             textViewDone.setText("Add");
+
         } else {
             editMyAppointmentTitle.setText(updateddoctorappointment.getDoctorAppointmentTitle());
             editMyAppointmentName.setText(updateddoctorappointment.getDoctorAppointmentName());

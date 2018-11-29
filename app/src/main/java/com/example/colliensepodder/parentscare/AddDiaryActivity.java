@@ -10,6 +10,11 @@ import android.widget.Toast;
 import static com.example.colliensepodder.parentscare.DiaryAdopter.updateddiary;
 import static com.example.colliensepodder.parentscare.EmergencyContactAdopter.updatedcontact;
 
+
+/**
+ * Created by colliensepodder on 8/30/2018.
+ */
+
 public class AddDiaryActivity extends AppCompatActivity {
 
     EditText editTextNote;

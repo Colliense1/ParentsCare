@@ -15,6 +15,9 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/**
+ * Created by colliensepodder on 9/30/2018.
+ */
 
 public class SelectDoctorAdapter extends RecyclerView.Adapter<SelectDoctorAdapter.ViewHolder> {
 
@@ -43,7 +46,7 @@ public class SelectDoctorAdapter extends RecyclerView.Adapter<SelectDoctorAdapte
 
 
     @Override
-    public void onBindViewHolder(SelectDoctorAdapter.ViewHolder holder, final int position) {
+    public void onBindViewHolder(final SelectDoctorAdapter.ViewHolder holder, final int position) {
         holder.DoctorNameTV.setText(doctorinfos.get(position).getDoctorName());
         holder.DoctorNumberTV.setText(doctorinfos.get(position).getDoctorNumber());
         holder.DoctorEmailTV.setText(doctorinfos.get(position).getDoctorEmail());
@@ -80,15 +83,27 @@ public class SelectDoctorAdapter extends RecyclerView.Adapter<SelectDoctorAdapte
 
             }
         });
-        holder.doctorCallLinearLayout.setOnClickListener(new View.OnClickListener() {
+        holder.emergencyDoctorTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String phone = String.valueOf(doctorinfos.get(position).getDoctorName());
+                String phone = String.valueOf(doctorinfos.get(position).getDoctorNumber());
                 Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
                 mContext.startActivity(intent);
             }
         });
 
+        holder.doctorCallLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //String phone = String.valueOf(doctorinfos.get(position).getDoctorName());
+                //holder.DoctorNameTV.setText(doctorinfos.get(position).getDoctorName());
+                //Toast.makeText(mContext, "Appointment Added succesfully"+position ,Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(mContext,AddMyAppointsmentsActivity.class);
+                i.putExtra("mode","1");
+                mContext.startActivity(i);
+
+            }
+        });
     }
 
     @Override
@@ -103,6 +118,7 @@ public class SelectDoctorAdapter extends RecyclerView.Adapter<SelectDoctorAdapte
         TextView DoctorspecialityTV;
         TextView dotssaa;
         TextView editsdoctor;
+        TextView emergencyDoctorTV;
         LinearLayout doctorCallLinearLayout;
 
         ViewHolder(View itemView) {

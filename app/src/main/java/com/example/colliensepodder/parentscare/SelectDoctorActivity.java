@@ -12,6 +12,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/**
+ * Created by colliensepodder on 9/30/2018.
+ */
+
 public class SelectDoctorActivity extends AppCompatActivity {
 
     Toolbar toolbar;
@@ -47,7 +51,7 @@ public class SelectDoctorActivity extends AppCompatActivity {
             LinearLayoutManager LayoutManagaer = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
             doctorsRV.setLayoutManager(LayoutManagaer);
 
-            DoctorAdopter adapter = new DoctorAdopter(this, doctorinfos, new Callback() {
+            SelectDoctorAdapter adapter = new SelectDoctorAdapter(this, doctorinfos, new Callback() {
                 @Override
                 public void Result(String result) {
                     onResume();

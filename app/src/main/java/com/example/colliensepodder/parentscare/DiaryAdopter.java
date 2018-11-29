@@ -14,7 +14,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-
+/**
+ * Created by colliensepodder on 8/30/2018.
+ */
 
 public class DiaryAdopter extends RecyclerView.Adapter<DiaryAdopter.ViewHolder> {
     Context mContext;

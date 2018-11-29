@@ -18,6 +18,10 @@ import com.miguelcatalan.materialsearchview.MaterialSearchView;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Created by colliensepodder on 7/30/2018.
+ */
+
 public class MedicineLibrary extends AppCompatActivity {
 
 

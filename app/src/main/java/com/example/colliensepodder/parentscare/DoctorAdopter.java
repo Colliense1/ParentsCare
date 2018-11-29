@@ -81,10 +81,10 @@ public class DoctorAdopter extends RecyclerView.Adapter<DoctorAdopter.ViewHolder
 
             }
         });
-        holder.doctorCallLinearLayout.setOnClickListener(new View.OnClickListener() {
+        holder.emergencyDoctorTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String phone = String.valueOf(doctorinfos.get(position).getDoctorName());
+                String phone = String.valueOf(doctorinfos.get(position).getDoctorNumber());
                 Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
                 mContext.startActivity(intent);
             }
@@ -105,6 +105,7 @@ public class DoctorAdopter extends RecyclerView.Adapter<DoctorAdopter.ViewHolder
         TextView DoctorspecialityTV;
         TextView dotssaa;
         TextView editsdoctor;
+        TextView emergencyDoctorTV;
         LinearLayout doctorCallLinearLayout;
 
         ViewHolder(View itemView) {
@@ -115,7 +116,7 @@ public class DoctorAdopter extends RecyclerView.Adapter<DoctorAdopter.ViewHolder
             DoctorspecialityTV = itemView.findViewById(R.id.DoctorspecialityTV);
             dotssaa = itemView.findViewById(R.id.dotssaa);
             doctorCallLinearLayout = itemView.findViewById(R.id.doctorCallLinearLayout);
-
+            emergencyDoctorTV = itemView.findViewById(R.id.emergencyDoctorTV);
             editsdoctor = itemView.findViewById(R.id.editsdoctor);
 
         }

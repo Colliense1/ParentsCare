@@ -32,12 +32,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        // Intent x = new Intent(context, Alert.class);
-        //  x.putExtra(context.getString(R.string.titttle), Title);
-        // x.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        //  context.startActivity(x);
-        // intent = new Intent(context, MyService.class);
-        //  context.startService(intent);
+
         this.mContext = context;
         String Title = "title";
         Uri alarmTone = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
@@ -66,14 +61,10 @@ public class AlarmReceiver extends BroadcastReceiver {
             }
         })
         ;
-
-
         android.app.AlertDialog alert = builder.create();
         alert.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
         alert.show();
-
     }
-
     private void showNotification(Context context) {
         Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 

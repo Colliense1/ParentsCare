@@ -25,6 +25,9 @@ import com.example.colliensepodder.parentscare.R;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+/**
+ * Created by colliensepodder on 7/30/2018.
+ */
 
 
 public class MedicineByDateAdopter extends RecyclerView.Adapter<MedicineByDateAdopter.ViewHolder> {

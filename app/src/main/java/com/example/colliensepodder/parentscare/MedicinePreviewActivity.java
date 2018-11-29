@@ -10,6 +10,10 @@ import android.widget.LinearLayout;
 import com.example.colliensepodder.parentscare.R;
 import com.example.colliensepodder.parentscare.MedicineDashboardFragment;
 
+/**
+ * Created by colliensepodder on 7/30/2018.
+ */
+
 public class MedicinePreviewActivity extends AppCompatActivity {
     LinearLayout fragmentLayout;
 

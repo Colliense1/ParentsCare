@@ -1,5 +1,7 @@
 package com.example.colliensepodder.parentscare;
-
+/**
+ * Created by colliensepodder on 8/30/2018.
+ */
 public class Contact {
     private String contactName;
     private String contactNumber;

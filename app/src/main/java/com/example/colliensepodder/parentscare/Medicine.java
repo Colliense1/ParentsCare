@@ -1,6 +1,9 @@
 package com.example.colliensepodder.parentscare;
 
 import java.util.ArrayList;
+/**
+ * Created by colliensepodder on 7/30/2018.
+ */
 
 public class Medicine {
 
