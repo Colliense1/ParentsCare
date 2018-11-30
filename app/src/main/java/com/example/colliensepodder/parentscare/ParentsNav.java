@@ -38,7 +38,7 @@ public class ParentsNav extends AppCompatActivity
 
     @Override
     protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(LocalHelper.onAttach(newBase,"en"));
+        super.attachBaseContext(LocalHelper.onAttach(newBase, "en"));
     }
 
     @Override
@@ -50,9 +50,9 @@ public class ParentsNav extends AppCompatActivity
         //change language
         Paper.init(this);
         String language = Paper.book().read("language");
-        if (language==null)
-            Paper.book().write("language","en");
-        updateView((String)Paper.book().read("language"));
+        if (language == null)
+            Paper.book().write("language", "en");
+        updateView((String) Paper.book().read("language"));
 
 
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -88,7 +88,7 @@ public class ParentsNav extends AppCompatActivity
     }
 
     private void updateView(String lang) {
-        Context context = LocalHelper.setLocale(this,lang);
+        Context context = LocalHelper.setLocale(this, lang);
         Resources resources = context.getResources();
     }
 
@@ -115,12 +115,12 @@ public class ParentsNav extends AppCompatActivity
 
         int id = item.getItemId();
         if (id == R.id.language_en) {
-            Paper.book().write("language","en");
-            updateView((String)Paper.book().read("language"));
+            Paper.book().write("language", "en");
+            updateView((String) Paper.book().read("language"));
             //return true;
-        }else if (id == R.id.language_bn){
-            Paper.book().write("language","bn");
-            updateView((String)Paper.book().read("language"));
+        } else if (id == R.id.language_bn) {
+            Paper.book().write("language", "bn");
+            updateView((String) Paper.book().read("language"));
         }
 
         return true;
@@ -174,7 +174,7 @@ public class ParentsNav extends AppCompatActivity
 
         } else if (id == R.id.nav_bmi) {
 
-            Intent i = new Intent(this,BmiActivity.class);
+            Intent i = new Intent(this, BmiActivity.class);
             startActivity(i);
 
             /*BmiFragment bmiFragment = new BmiFragment();
@@ -192,7 +192,18 @@ public class ParentsNav extends AppCompatActivity
 
         } else if (id == R.id.nav_share) {
 
+        } else if (id == R.id.nav_moreapps) {
+
+        } else if (id == R.id.nav_help) {
+
+        } else if (id == R.id.nav_condition) {
+
+        } else if (id == R.id.nav_privacy) {
+
+        } else if (id == R.id.nav_about) {
+
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

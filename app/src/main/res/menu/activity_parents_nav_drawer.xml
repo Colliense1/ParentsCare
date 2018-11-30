@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
@@ -55,17 +54,51 @@
             android:id="@+id/nav_signout"
             android:icon="@drawable/ic_highlight_off_black_24dp"
             android:title="Sign out" />
-
-
     </group>
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-        </menu>
-    </item>
+    <group android:checkableBehavior="single">
+        <item android:title="Communicate">
+            <menu>
+                <item
+                    android:id="@+id/nav_share"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="Share" />
+
+                <item
+                    android:id="@+id/nav_moreapps"
+                    android:icon="@drawable/ic_more_black_24dp"
+                    android:title="More apps" />
+                
+            </menu>
+
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item android:title="More">
+            <menu>
+                <item
+                    android:id="@+id/nav_help"
+                    android:icon="@drawable/ic_forum_black_24dp"
+                    android:title="Help &amp; Support" />
+
+                <item
+                    android:id="@+id/nav_condition"
+                    android:icon="@drawable/ic_help_black_24dp"
+                    android:title="Terms &amp; Condition" />
+
+                <item
+                    android:id="@+id/nav_privacy"
+                    android:icon="@drawable/ic_security_black_24dp"
+                    android:title="Privacy policy" />
+
+                <item
+                    android:id="@+id/nav_about"
+                    android:icon="@mipmap/ic_launcher_pcare"
+                    android:title="About" />
+            </menu>
+
+        </item>
+    </group>
 
 </menu>
