@@ -82,7 +82,7 @@ public class Pillreminder extends AppCompatActivity implements MainFragment.OnFr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pillreminder);
 
-        if (Build.VERSION.SDK_INT >= 23) {
+        if (Build.VERSION.SDK_INT >= 27) {
             if (!checkPermission()) {
                 requestPermission();
             }
@@ -267,7 +267,7 @@ public class Pillreminder extends AppCompatActivity implements MainFragment.OnFr
 
     @Override
     protected void onRestart() {
-        if (Build.VERSION.SDK_INT >= 11) {
+        if (Build.VERSION.SDK_INT >= 19) {
             recreate();
         } else {
             Intent intent = getIntent();

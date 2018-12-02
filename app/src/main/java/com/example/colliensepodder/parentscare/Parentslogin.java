@@ -93,10 +93,6 @@ public class Parentslogin extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parentslogin);
 
-        /*if (!isConnected(Parentslogin.this)) buildDialog(Parentslogin.this).show();
-        else{
-        }*/
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("                Parent's Care");
@@ -139,12 +135,7 @@ public class Parentslogin extends AppCompatActivity implements
 
             @Override
             public void onVerificationCompleted(PhoneAuthCredential credential) {
-                // This callback will be invoked in two situations:
-                // 1 - Instant verification. In some cases the phone number can be instantly
-                //     verified without needing to send or enter a verification code.
-                // 2 - Auto-retrieval. On some devices Google Play services can automatically
-                //     detect the incoming verification SMS and perform verificaiton without
-                //     user action.
+
                 Log.d(TAG, "onVerificationCompleted:" + credential);
                 // [START_EXCLUDE silent]
                 mVerificationInProgress = false;
@@ -403,16 +394,7 @@ public class Parentslogin extends AppCompatActivity implements
         } else {
             // Signed in
             mPhoneNumberViews.setVisibility(View.GONE);
-            /*
-            mSignedInViews.setVisibility(View.VISIBLE);
 
-            enableViews(mPhoneNumberField, mVerificationField);
-            mPhoneNumberField.setText(null);
-            mVerificationField.setText(null);
-
-            mStatusText.setText(R.string.signed_in);
-            mDetailText.setText(getString(R.string.firebase_status_fmt, user.getUid()));
-            */
             Intent intent = new Intent(this, ParentsNav.class);
             startActivity(intent);
             finish();
@@ -484,37 +466,4 @@ public class Parentslogin extends AppCompatActivity implements
         }
     }
 
-
-   /* public boolean isConnected(Context context) {
-
-        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo netinfo = cm.getActiveNetworkInfo();
-
-        if (netinfo != null && netinfo.isConnectedOrConnecting()) {
-            android.net.NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-            android.net.NetworkInfo mobile = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-
-            if((mobile != null && mobile.isConnectedOrConnecting()) || (wifi != null && wifi.isConnectedOrConnecting())) return true;
-        else return false;
-        } else
-        return false;
-    }
-
-    public AlertDialog.Builder buildDialog(Context c) {
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(c);
-        builder.setTitle("Please Check Your Internet Connection");
-        builder.setMessage("Press ok to Exit");
-
-        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-                finish();
-            }
-        });
-
-        return builder;
-    }*/
 }
