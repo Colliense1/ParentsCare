@@ -83,14 +83,14 @@ public class SelectDoctorAdapter extends RecyclerView.Adapter<SelectDoctorAdapte
 
             }
         });
-        holder.emergencyDoctorTV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String phone = String.valueOf(doctorinfos.get(position).getDoctorNumber());
-                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
-                mContext.startActivity(intent);
-            }
-        });
+//        holder.emergencyDoctorTV.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String phone = String.valueOf(doctorinfos.get(position).getDoctorNumber());
+//                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+//                mContext.startActivity(intent);
+//            }
+//        });
 
         holder.doctorCallLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,7 +99,7 @@ public class SelectDoctorAdapter extends RecyclerView.Adapter<SelectDoctorAdapte
                 //holder.DoctorNameTV.setText(doctorinfos.get(position).getDoctorName());
                 //Toast.makeText(mContext, "Appointment Added succesfully"+position ,Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(mContext,AddMyAppointsmentsActivity.class);
-                i.putExtra("mode","1");
+                //i.putExtra("mode","1");
                 mContext.startActivity(i);
 
             }

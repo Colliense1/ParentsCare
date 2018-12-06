@@ -7,6 +7,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.facebook.appevents.AppEventsConstants;
@@ -21,6 +22,7 @@ public class BmiActivity extends AppCompatActivity {
     TextView textViewBmiHeight;
     TextView textViewBmiWeight;
     android.widget.LinearLayout lLayoutCalculateBodymi;
+    Button buttonCalculateBmi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,32 +67,37 @@ public class BmiActivity extends AppCompatActivity {
         lLayoutCalculateBodymi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editTextHeightFeet = findViewById(R.id.editTextHeightFeet);
-                BMICalculator.Bmi bmi = BMICalculator.getBmi(BmiActivity.this.editTextHeightFeet.
-                        getText().toString().trim(), BmiActivity.this.editTextHeightInches.
-                        getText().toString().trim(), BmiActivity.this.editTextWeightKg.
-                        getText().toString().trim());
-                View inflate = getLayoutInflater().inflate(R.layout.dialog_bmi_calculation_results, null);
-                final AlertDialog create = new AlertDialog.Builder(BmiActivity.this).setView(inflate).create();
-                ((TextView) inflate.findViewById(R.id.textViewBmiIndex)).setText(bmi.bmiIndex);
-                ((TextView) inflate.findViewById(R.id.textViewBmiStatus)).setText(bmi.healthStatusText);
-                TextView textView = (TextView) inflate.findViewById(R.id.textViewBmiIndex);
-                int i = bmi.healthStatusIndex;
-                int i2 = R.color.redLight;
-                textView.setTextColor(ContextCompat.getColor(BmiActivity.this, i == 1 ?
-                        R.color.green :
-                        R.color.redLight));
-                textView = (TextView) inflate.findViewById(R.id.textViewBmiStatus);
-                if (bmi.healthStatusIndex == 1) {
-                    i2 = R.color.green;
-                }
-                textView.setTextColor(ContextCompat.getColor(BmiActivity.this, i2));
-                inflate.findViewById(R.id.textViewOkay).setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View view) {
-                        create.dismiss();
+                if (editTextWeightKg.getText().toString().equals("")) {
+                    editTextWeightKg.setError("This field can't be empty");
+                    return;
+                } else {
+                    editTextHeightFeet = findViewById(R.id.editTextHeightFeet);
+                    BMICalculator.Bmi bmi = BMICalculator.getBmi(BmiActivity.this.editTextHeightFeet.
+                            getText().toString().trim(), BmiActivity.this.editTextHeightInches.
+                            getText().toString().trim(), BmiActivity.this.editTextWeightKg.
+                            getText().toString().trim());
+                    View inflate = getLayoutInflater().inflate(R.layout.dialog_bmi_calculation_results, null);
+                    final AlertDialog create = new AlertDialog.Builder(BmiActivity.this).setView(inflate).create();
+                    ((TextView) inflate.findViewById(R.id.textViewBmiIndex)).setText(bmi.bmiIndex);
+                    ((TextView) inflate.findViewById(R.id.textViewBmiStatus)).setText(bmi.healthStatusText);
+                    TextView textView = (TextView) inflate.findViewById(R.id.textViewBmiIndex);
+                    int i = bmi.healthStatusIndex;
+                    int i2 = R.color.redLight;
+                    textView.setTextColor(ContextCompat.getColor(BmiActivity.this, i == 1 ?
+                            R.color.green :
+                            R.color.redLight));
+                    textView = (TextView) inflate.findViewById(R.id.textViewBmiStatus);
+                    if (bmi.healthStatusIndex == 1) {
+                        i2 = R.color.green;
                     }
-                });
-                create.show();
+                    textView.setTextColor(ContextCompat.getColor(BmiActivity.this, i2));
+                    inflate.findViewById(R.id.textViewOkay).setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View view) {
+                            create.dismiss();
+                        }
+                    });
+                    create.show();
+                }
             }
         });
     }
