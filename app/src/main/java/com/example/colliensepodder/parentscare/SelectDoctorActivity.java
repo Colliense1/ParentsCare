@@ -1,5 +1,6 @@
 package com.example.colliensepodder.parentscare;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,12 +32,12 @@ public class SelectDoctorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_doctor);
 
-        toolbar= (Toolbar)findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         Rlayout = (LinearLayout) findViewById(R.id.rlayout);
         LinearLayoutNoDoctor = (LinearLayout) findViewById(R.id.linearLayoutNoDoctor);
         linearLayoutAddDoctor = (LinearLayout) findViewById(R.id.linearLayoutAddDoctor);
-        headerDoctors= (TextView)findViewById(R.id.headerDoctors);
-        textViewAddDoctor= (TextView)findViewById(R.id.textViewAddDoctor);
+        headerDoctors = (TextView) findViewById(R.id.headerDoctors);
+        textViewAddDoctor = (TextView) findViewById(R.id.textViewAddDoctor);
     }
 
     @Override
@@ -45,8 +46,8 @@ public class SelectDoctorActivity extends AppCompatActivity {
         super.onResume();
         MedicineManagementDatabase obj = new MedicineManagementDatabase(this);
         ArrayList<Doctorinfo> doctorinfos = obj.retriveAllDoctor();
-        if(doctorinfos.size()!=0) {
-            doctorsRV= (RecyclerView)findViewById(R.id.eDoctorsRV);
+        if (doctorinfos.size() != 0) {
+            doctorsRV = (RecyclerView) findViewById(R.id.eDoctorsRV);
             LinearLayoutNoDoctor.setVisibility(View.INVISIBLE);
             LinearLayoutManager LayoutManagaer = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
             doctorsRV.setLayoutManager(LayoutManagaer);
@@ -54,12 +55,19 @@ public class SelectDoctorActivity extends AppCompatActivity {
             SelectDoctorAdapter adapter = new SelectDoctorAdapter(this, doctorinfos, new Callback() {
                 @Override
                 public void Result(String result) {
-                    onResume();
+                    if (result.equals("0")) {
+                        onResume();
+                    } else {
+                        Intent returnIntent = new Intent();
+                        returnIntent.putExtra("name", result);
+                        setResult(Activity.RESULT_OK, returnIntent);
+                        finish();
+                    }
+
                 }
             });
             doctorsRV.setAdapter(adapter);
-        }
-        else {
+        } else {
             LinearLayoutNoDoctor.setVisibility(View.VISIBLE);
 
         }
@@ -76,8 +84,8 @@ public class SelectDoctorActivity extends AppCompatActivity {
     }
 
     public void goToAddActivity(View view) {
-        Intent ii=new Intent(this,AddDoctorActivity.class);
-        ii.putExtra("mode","1");
+        Intent ii = new Intent(this, AddDoctorActivity.class);
+        ii.putExtra("mode", "1");
         startActivity(ii);
     }
 }

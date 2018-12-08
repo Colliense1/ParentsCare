@@ -16,7 +16,6 @@ public class AppointmentInfo {
     public String getDoctorAppointmentTitle() {
         return doctorappointmentTitle;
     }
-
     public String getDoctorAppointmentName() {
         return doctorappointmentName;
     }

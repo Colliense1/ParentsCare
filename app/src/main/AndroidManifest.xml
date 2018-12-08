@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.SET_ALARM" />
 
     <application
         android:name=".MainApplication"
@@ -109,6 +109,8 @@
         <activity android:name=".AddMyAppointsmentsActivity" />
         <activity android:name=".BmiActivity" />
         <activity android:name=".SelectDoctorActivity" />
+        <activity android:name=".MoreNavigation.Activity.HelpAndSupport" />
+        <activity android:name=".MoreNavigation.Activity.About"></activity>
     </application>
 
 </manifest>

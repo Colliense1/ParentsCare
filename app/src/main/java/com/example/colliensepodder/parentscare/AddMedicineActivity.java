@@ -35,7 +35,8 @@ public class AddMedicineActivity extends AppCompatActivity {
     AutoCompleteTextView medicineNameET;
     Button submitBtn;
     public static ArrayList<TakenTime> takenTime = new ArrayList<>();
-    Spinner tabletOrLiquiedSpinner, tabletOrLiquiedQuantitySpinner;
+    Spinner tabletOrLiquiedSpinner;
+    Spinner tabletOrLiquiedQuantitySpinner;
     private int day, month, year, hour, minute;
     ArrayList<String> pickTimeList = new ArrayList<String>();
     private static final String[] medicines = new String[] {

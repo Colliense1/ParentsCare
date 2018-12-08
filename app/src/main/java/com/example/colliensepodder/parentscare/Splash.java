@@ -29,7 +29,7 @@ public class Splash extends AppCompatActivity {
             public void run() {
                 startActivity(new Intent(getApplicationContext(),Selectmode.class));
             }
-        },6000);
+        },4000);
 
         Animation myanim = AnimationUtils.loadAnimation(this,R.anim.mytransition);
         tc.startAnimation(myanim);

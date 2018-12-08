@@ -66,7 +66,7 @@ public class MyAppointmentAdopter extends RecyclerView.Adapter<MyAppointmentAdop
 
                             public void onClick(DialogInterface dialog, int whichButton) {
                                 MedicineManagementDatabase obj = new MedicineManagementDatabase(mContext);
-                                obj.deleteDoctorAppointment(appointmentInfos.get(position).getDoctorAppointmentName());
+                                obj.deleteDoctorAppointment(appointmentInfos.get(position).getDoctorAppointmentTitle());
                                 Toast.makeText(mContext, "Deleted", Toast.LENGTH_SHORT).show();
                                 appointmentInfos.remove(appointmentInfos.get(position));
                                 notifyDataSetChanged();

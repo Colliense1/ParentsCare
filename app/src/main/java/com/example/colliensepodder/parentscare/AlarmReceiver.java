@@ -11,11 +11,13 @@ import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.provider.ContactsContract;
+import android.provider.Telephony;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.telephony.SmsManager;
+import android.text.style.ClickableSpan;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -44,7 +46,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                 .setCancelable(false)
                 .setPositiveButton("SMS", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
+                        dialog.dismiss();
                         ringtoneAlarm.stop();
                         sentMsgToParent();
                         // ringtoneAlarm.stop();
@@ -53,18 +55,41 @@ public class AlarmReceiver extends BroadcastReceiver {
 
 
                 })
-        .setNegativeButton("Email", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-                ringtoneAlarm.stop();
-            }
-        })
+                .setNegativeButton("Email", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        ringtoneAlarm.stop();
+                       /* ClickableSpan clickableSpan = new ClickableSpan() {
+                            @Override
+                            public void onClick(View widget) {
+                                MedicineManagementDatabase obj = new MedicineManagementDatabase(mContext);
+                                ArrayList<Contact> contacts = obj.retriveAllEmergencyContact();
+                                if (contacts.size() != 0) {
+                                    Intent email = new Intent(Intent.ACTION_SEND);
+                                    String e = contacts.get(0).getContactEmail();
+                                    email.putExtra(Intent.EXTRA_EMAIL, new String[]{e});
+                                    email.setType("message/rfc822");
+                                    mContext.startActivity(Intent.createChooser(email, ""));
+
+                                    return;
+
+                                }else {
+                                    return;
+                                }
+                            }
+                        };*/
+                        dialog.dismiss();
+                    }
+
+                })
         ;
         android.app.AlertDialog alert = builder.create();
         alert.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
         alert.show();
     }
+
+
     private void showNotification(Context context) {
         Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
@@ -79,16 +104,38 @@ public class AlarmReceiver extends BroadcastReceiver {
     }
 
 
+    /*public void ClickableSpan() {
+        try {
+            MedicineManagementDatabase obj = new MedicineManagementDatabase(mContext);
+            ArrayList<Contact> contacts = obj.retriveAllEmergencyContact();
+            if (contacts.size() != 0) {
 
-    public void sentMsgToParent(){
+                Intent email = new Intent(Intent.ACTION_SEND);
+                String e = contacts.get(0).getContactEmail();
+                email.putExtra(Intent.EXTRA_EMAIL, new String[]{e});
+                email.setType("message/rfc822");
+                mContext.startActivity(Intent.createChooser(email, "Choose App"));
+                return;
+
+            }else {
+                return;
+            }
+        } catch (Exception e1) {
+            e1.printStackTrace();
+
+        }
+    }*/
+
+
+    public void sentMsgToParent() {
         MedicineManagementDatabase obj = new MedicineManagementDatabase(mContext);
         ArrayList<Contact> contacts = obj.retriveAllEmergencyContact();
-        if(contacts.size()!=0) {
-            if(checkPermission()) {
+        if (contacts.size() != 0) {
+            if (checkPermission()) {
                 SmsManager smsManager = SmsManager.getDefault();
                 smsManager.sendTextMessage(contacts.get(0).getContactNumber(), null, "Necessary Medicine has been taken", null, null);
             }
-        }else {
+        } else {
             return;
         }
     }

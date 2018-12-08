@@ -30,7 +30,7 @@ public class AddDoctorActivity extends AppCompatActivity {
     TextView textViewDone;
     CircleImageView imageViewMale;
     CircleImageView imageViewFemale;
-
+String gender="";
 
     private int avatar = 1;
     @Override
@@ -45,6 +45,22 @@ public class AddDoctorActivity extends AppCompatActivity {
         editTextSpeciality = (EditText) findViewById(R.id.editTextSpeciality);
         imageViewMale = (CircleImageView)findViewById(R.id.imageViewMale);
         imageViewFemale = (CircleImageView)findViewById(R.id.imageViewFemale);
+        imageViewMale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gender="male";
+                imageViewMale.setBackground(ContextCompat.getDrawable(AddDoctorActivity.this,R.drawable.background_red_circle));
+                imageViewFemale.setBackground(ContextCompat.getDrawable(AddDoctorActivity.this,R.drawable.background_white_circle));
+            }
+        });
+        imageViewFemale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               gender="female";
+                imageViewFemale.setBackground(ContextCompat.getDrawable(AddDoctorActivity.this,R.drawable.background_red_circle));
+                imageViewMale.setBackground(ContextCompat.getDrawable(AddDoctorActivity.this,R.drawable.background_white_circle));
+            }
+        });
 
         editTextSpeciality.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,7 +133,7 @@ public class AddDoctorActivity extends AppCompatActivity {
                         (editTextName.getText().toString(),
                                 editTextPhone.getText().toString(),
                                 editTextEmail.getText().toString(),
-                                editTextSpeciality.getText().toString());
+                                editTextSpeciality.getText().toString(),gender);
                 MedicineManagementDatabase obj = new MedicineManagementDatabase(this);
                 long g = obj.addDoctor(newDoctorinfo);
                 Toast.makeText(getApplicationContext(), "Doctor Added succesfully " + g, Toast.LENGTH_SHORT).show();

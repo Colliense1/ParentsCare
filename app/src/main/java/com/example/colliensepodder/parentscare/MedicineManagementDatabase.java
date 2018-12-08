@@ -320,9 +320,10 @@ public class MedicineManagementDatabase {
                     String mDoctorNumber = cursor.getString(cursor.getColumnIndex(DatabaseHelper.DOCTOR_NUMBER));
                     String mDoctorEmail = cursor.getString(cursor.getColumnIndex(DatabaseHelper.DOCTOR_EMAIL));
                     String mDoctorSpeciality = cursor.getString(cursor.getColumnIndex(DatabaseHelper.DOCTOR_SPECIALITY));
+                    String mDoctorGender = cursor.getString(cursor.getColumnIndex(DatabaseHelper.DOCTOR_GENDER));
 
                     // int takenYesOrNo = 0 ;
-                    row.add(new Doctorinfo(mDoctorName, mDoctorNumber, mDoctorEmail, mDoctorSpeciality));
+                    row.add(new Doctorinfo(mDoctorName, mDoctorNumber, mDoctorEmail, mDoctorSpeciality,mDoctorGender));
 
                 }
                 while (cursor.moveToNext());
@@ -340,6 +341,7 @@ public class MedicineManagementDatabase {
         contentValues.put(DatabaseHelper.DOCTOR_NUMBER, doctorinfos.getDoctorNumber());
         contentValues.put(DatabaseHelper.DOCTOR_EMAIL, doctorinfos.getDoctorEmail());
         contentValues.put(DatabaseHelper.DOCTOR_SPECIALITY, doctorinfos.getSpeciality());
+        contentValues.put(DatabaseHelper.DOCTOR_GENDER, doctorinfos.getAvatar());
 
         long inserted = sqLiteDatabase.insert(DatabaseHelper.DOCTOR_TABLE, null, contentValues);
 

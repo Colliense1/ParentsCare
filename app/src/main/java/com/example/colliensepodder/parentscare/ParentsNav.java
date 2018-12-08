@@ -22,6 +22,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.colliensepodder.parentscare.Helper.LocalHelper;
+import com.example.colliensepodder.parentscare.MoreNavigation.Activity.HelpAndSupport;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
@@ -195,6 +196,8 @@ public class ParentsNav extends AppCompatActivity
         } else if (id == R.id.nav_moreapps) {
 
         } else if (id == R.id.nav_help) {
+            Intent i = new Intent(this, HelpAndSupport.class);
+            startActivity(i);
 
         } else if (id == R.id.nav_condition) {
 

@@ -1,5 +1,6 @@
 package com.example.colliensepodder.parentscare;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,8 +35,9 @@ public class AddMyAppointsmentsActivity extends AppCompatActivity {
         editMyAppointmentName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(AddMyAppointsmentsActivity.this,SelectDoctorActivity.class);
-                startActivity(i);
+                Intent i = new Intent(AddMyAppointsmentsActivity.this, SelectDoctorActivity.class);
+                startActivityForResult(i, 10);
+                //startActivity(i);
             }
         });
 
@@ -52,6 +54,21 @@ public class AddMyAppointsmentsActivity extends AppCompatActivity {
         }
 
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == 10) {
+            if (resultCode == Activity.RESULT_OK) {
+                String result = data.getStringExtra("name");
+                editMyAppointmentName.setText(result);
+            }
+            if (resultCode == Activity.RESULT_CANCELED) {
+                //Write your code if there's no result
+            }
+        }
+    }//onActivityResult
+
     public void clickAddAppointments(View view) {
 
         if (editMyAppointmentTitle.getText().toString().equals("")) {
@@ -60,7 +77,7 @@ public class AddMyAppointsmentsActivity extends AppCompatActivity {
         } else if (editMyAppointmentName.getText().toString().equals("")) {
             editMyAppointmentName.setError("This field can't be empty");
             return;
-        }else if (editTextLocation.getText().toString().equals("")) {
+        } else if (editTextLocation.getText().toString().equals("")) {
             editTextLocation.setError("This field can't be empty");
             return;
         } else {
@@ -89,7 +106,7 @@ public class AddMyAppointsmentsActivity extends AppCompatActivity {
 
     }
 
-    
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();

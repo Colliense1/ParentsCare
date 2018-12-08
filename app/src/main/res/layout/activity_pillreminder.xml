@@ -47,9 +47,9 @@
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#afcfde"
-        app:textColorNormal="#beaaaa"
-        app:textColorSelected="#032a4d"
+        android:background="#abd3e6"
+        app:textColorNormal="#7e7c7c"
+        app:textColorSelected="#011b31"
         app:textSizeDayName="12sp"
         app:textSizeDayNumber="14sp"
         app:textSizeMonthName="12sp" />
@@ -74,11 +74,15 @@
         android:orientation="vertical">
 
 
-        <ImageView
-            android:layout_width="300dp"
-            android:layout_height="300dp"
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="200.0dip"
+            android:layout_height="300.0dip"
+            android:layout_margin="16.0dip"
             android:src="@drawable/no_medi"
-             />
+            app:civ_border_color="#ffeeeeee"
+            app:civ_border_width="4.0dip"
+            xmlns:app="http://schemas.android.com/apk/res-auto" />
+
 
         <TextView
             android:layout_width="match_parent"

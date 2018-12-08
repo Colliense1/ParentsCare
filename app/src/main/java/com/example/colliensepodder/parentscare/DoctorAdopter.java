@@ -3,7 +3,9 @@ package com.example.colliensepodder.parentscare;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class DoctorAdopter extends RecyclerView.Adapter<DoctorAdopter.ViewHolder> {
@@ -42,19 +46,26 @@ public class DoctorAdopter extends RecyclerView.Adapter<DoctorAdopter.ViewHolder
         return new DoctorAdopter.ViewHolder(view);
     }
 
-
     @Override
     public void onBindViewHolder(DoctorAdopter.ViewHolder holder, final int position) {
         holder.DoctorNameTV.setText(doctorinfos.get(position).getDoctorName());
         holder.DoctorNumberTV.setText(doctorinfos.get(position).getDoctorNumber());
         holder.DoctorEmailTV.setText(doctorinfos.get(position).getDoctorEmail());
         holder.DoctorspecialityTV.setText(doctorinfos.get(position).getSpeciality());
+        if (doctorinfos.get(position).getAvatar().toString().equals("male")) {
+            holder.avatarGender.setImageResource(R.drawable.doctor_avatar_male);
+
+        }
+        if (doctorinfos.get(position).getAvatar().toString().equals("female")) {
+            holder.avatarGender.setImageResource(R.drawable.doctor_avatar_female);
+
+        }
         holder.editsdoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 updateddoctor = doctorinfos.get(position);
-                Intent ii=new Intent(mContext,AddDoctorActivity.class);
-                ii.putExtra("mode","2");
+                Intent ii = new Intent(mContext, AddDoctorActivity.class);
+                ii.putExtra("mode", "2");
                 mContext.startActivity(ii);
             }
         });
@@ -73,10 +84,11 @@ public class DoctorAdopter extends RecyclerView.Adapter<DoctorAdopter.ViewHolder
                                 doctorinfos.remove(doctorinfos.get(position));
                                 notifyDataSetChanged();
 
-                                if(doctorinfos.size()==0){
+                                if (doctorinfos.size() == 0) {
                                     callback.Result("0");
                                 }
-                            }})
+                            }
+                        })
                         .setNegativeButton(android.R.string.no, null).show();
 
             }
@@ -92,7 +104,6 @@ public class DoctorAdopter extends RecyclerView.Adapter<DoctorAdopter.ViewHolder
 
     }
 
-
     @Override
     public int getItemCount() {
         return doctorinfos.size();
@@ -107,6 +118,7 @@ public class DoctorAdopter extends RecyclerView.Adapter<DoctorAdopter.ViewHolder
         TextView editsdoctor;
         TextView emergencyDoctorTV;
         LinearLayout doctorCallLinearLayout;
+        CircleImageView avatarGender;
 
         ViewHolder(View itemView) {
             super(itemView);
@@ -118,10 +130,10 @@ public class DoctorAdopter extends RecyclerView.Adapter<DoctorAdopter.ViewHolder
             doctorCallLinearLayout = itemView.findViewById(R.id.doctorCallLinearLayout);
             emergencyDoctorTV = itemView.findViewById(R.id.emergencyDoctorTV);
             editsdoctor = itemView.findViewById(R.id.editsdoctor);
+            avatarGender = itemView.findViewById(R.id.imageViewAvatar);
 
         }
 
     }
-
 
 }

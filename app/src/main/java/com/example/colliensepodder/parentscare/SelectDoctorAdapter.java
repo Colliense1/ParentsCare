@@ -1,5 +1,6 @@
 package com.example.colliensepodder.parentscare;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -27,6 +28,7 @@ public class SelectDoctorAdapter extends RecyclerView.Adapter<SelectDoctorAdapte
     public static Doctorinfo updateddoctor;
     float minute;
     LayoutInflater layoutInflater;
+
 
     Callback callback;
 
@@ -95,13 +97,7 @@ public class SelectDoctorAdapter extends RecyclerView.Adapter<SelectDoctorAdapte
         holder.doctorCallLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //String phone = String.valueOf(doctorinfos.get(position).getDoctorName());
-                //holder.DoctorNameTV.setText(doctorinfos.get(position).getDoctorName());
-                //Toast.makeText(mContext, "Appointment Added succesfully"+position ,Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(mContext,AddMyAppointsmentsActivity.class);
-                //i.putExtra("mode","1");
-                mContext.startActivity(i);
-
+              callback.Result(doctorinfos.get(position).getDoctorName());
             }
         });
     }
@@ -129,12 +125,9 @@ public class SelectDoctorAdapter extends RecyclerView.Adapter<SelectDoctorAdapte
             DoctorspecialityTV = itemView.findViewById(R.id.DoctorspecialityTV);
             dotssaa = itemView.findViewById(R.id.dotssaa);
             doctorCallLinearLayout = itemView.findViewById(R.id.doctorCallLinearLayout);
-
             editsdoctor = itemView.findViewById(R.id.editsdoctor);
 
         }
 
     }
-
-
 }
