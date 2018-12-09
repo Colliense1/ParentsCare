@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.os.Build;
 import android.provider.ContactsContract;
 import android.provider.Telephony;
 import android.support.v4.app.ActivityCompat;
@@ -82,10 +83,18 @@ public class AlarmReceiver extends BroadcastReceiver {
                         dialog.dismiss();
                     }
 
-                })
-        ;
+                });
+
+
         android.app.AlertDialog alert = builder.create();
         alert.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
+
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
+            alert.getWindow().setType(WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY);
+        } else {
+            alert.getWindow().setType(WindowManager.LayoutParams.TYPE_PHONE);
+        }
+        alert.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
         alert.show();
     }
 
