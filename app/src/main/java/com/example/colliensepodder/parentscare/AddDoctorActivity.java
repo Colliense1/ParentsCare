@@ -50,7 +50,7 @@ String gender="";
             public void onClick(View v) {
                 gender="male";
                 imageViewMale.setBackground(ContextCompat.getDrawable(AddDoctorActivity.this,R.drawable.background_red_circle));
-                //imageViewFemale.setBackground(ContextCompat.getDrawable(AddDoctorActivity.this,R.drawable.background_white_circle));
+                imageViewFemale.setBackground(ContextCompat.getDrawable(AddDoctorActivity.this,R.drawable.background_white_circle));
             }
         });
         imageViewFemale.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +58,7 @@ String gender="";
             public void onClick(View v) {
                gender="female";
                 imageViewFemale.setBackground(ContextCompat.getDrawable(AddDoctorActivity.this,R.drawable.background_red_circle));
-               // imageViewMale.setBackground(ContextCompat.getDrawable(AddDoctorActivity.this,R.drawable.background_white_circle));
+                imageViewMale.setBackground(ContextCompat.getDrawable(AddDoctorActivity.this,R.drawable.background_white_circle));
             }
         });
 

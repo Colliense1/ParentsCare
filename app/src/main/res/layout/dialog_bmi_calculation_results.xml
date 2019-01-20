@@ -53,7 +53,7 @@
 
     <TextView
         android:textSize="14.0sp"
-        android:textColor="#2fa34e"
+        android:textColor="@color/green"
         android:gravity="end"
         android:id="@id/textViewOkay"
         android:paddingRight="24.0dip"

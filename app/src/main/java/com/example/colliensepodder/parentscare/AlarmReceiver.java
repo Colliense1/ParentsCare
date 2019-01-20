@@ -11,11 +11,13 @@ import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Vibrator;
 import android.provider.ContactsContract;
 import android.provider.Telephony;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.telephony.SmsManager;
 import android.text.style.ClickableSpan;
@@ -28,26 +30,32 @@ import com.google.zxing.client.result.EmailDoCoMoResultParser;
 
 import java.util.ArrayList;
 
+import static android.support.v7.app.AlertDialog.*;
+
 
 public class AlarmReceiver extends BroadcastReceiver {
 
     Context mContext;
 
-    @Override
-    public void onReceive(Context context, Intent intent) {
 
+    @Override
+    public void onReceive(final Context context, Intent intent) {
         this.mContext = context;
         String Title = "title";
+
         Uri alarmTone = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         final Ringtone ringtoneAlarm = RingtoneManager.getRingtone(context, alarmTone);
         ringtoneAlarm.play();
+
+        Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(2000);
         android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(context);
         String msg = "Time to take a medicine";
         builder.setMessage(msg)
                 .setCancelable(false)
                 .setPositiveButton("SMS", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        dialog.dismiss();
+                        dialog.cancel();
                         ringtoneAlarm.stop();
                         sentMsgToParent();
                         // ringtoneAlarm.stop();
@@ -60,7 +68,9 @@ public class AlarmReceiver extends BroadcastReceiver {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
+                        dialog.cancel();
                         ringtoneAlarm.stop();
+
                        /* ClickableSpan clickableSpan = new ClickableSpan() {
                             @Override
                             public void onClick(View widget) {
@@ -80,12 +90,10 @@ public class AlarmReceiver extends BroadcastReceiver {
                                 }
                             }
                         };*/
-                        dialog.dismiss();
+
                     }
 
                 });
-
-
         android.app.AlertDialog alert = builder.create();
         alert.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
 
@@ -95,6 +103,7 @@ public class AlarmReceiver extends BroadcastReceiver {
             alert.getWindow().setType(WindowManager.LayoutParams.TYPE_PHONE);
         }
         alert.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
+
         alert.show();
     }
 
@@ -153,7 +162,8 @@ public class AlarmReceiver extends BroadcastReceiver {
         int result = ContextCompat.checkSelfPermission(mContext, Manifest.permission.SEND_SMS);
         if (result == PackageManager.PERMISSION_GRANTED) {
             return true;
-        } else {
+        }
+        else {
             return false;
         }
     }

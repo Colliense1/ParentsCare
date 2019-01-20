@@ -4,6 +4,7 @@
     android:id="@id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto">
@@ -41,6 +42,16 @@
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/button_v"
+        android:layout_alignParentTop="true">
+
     <LinearLayout
         android:id="@+id/rlayout"
         android:orientation="vertical"
@@ -50,16 +61,18 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/eDoctorsRV"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false">
 
         </android.support.v7.widget.RecyclerView>
 
 
         <LinearLayout
+            android:layout_marginTop="100.0dip"
+            android:layout_gravity="center"
             android:gravity="center"
             android:orientation="vertical"
             android:id="@id/linearLayoutNoDoctor"
-            android:background="#ffff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1.0">
@@ -86,8 +99,13 @@
                 android:layout_marginRight="100.0dip"
                 android:text="You Haven’t Added Any Doctors Yet" />
         </LinearLayout>
+    </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
         <android.support.v7.widget.CardView
+            android:id="@+id/button_v"
             android:background="#fffefefe"
+            android:layout_alignParentBottom="true"
             android:layout_width="fill_parent"
             android:layout_height="64.0dip"
             card_view:cardCornerRadius="6.0dip"
@@ -124,5 +142,6 @@
                     android:textAllCaps="true" />
             </LinearLayout>
         </android.support.v7.widget.CardView>
-    </LinearLayout>
+
+    </RelativeLayout>
 </LinearLayout>

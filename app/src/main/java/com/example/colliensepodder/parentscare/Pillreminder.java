@@ -82,7 +82,7 @@ public class Pillreminder extends AppCompatActivity implements MainFragment.OnFr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pillreminder);
 
-        if (Build.VERSION.SDK_INT >= 27) {
+        if (Build.VERSION.SDK_INT >= 23) {
             if (!checkPermission()) {
                 requestPermission();
             }
@@ -169,7 +169,7 @@ public class Pillreminder extends AppCompatActivity implements MainFragment.OnFr
                     , getMonth(row.get(i).getMedicineTakenDate())
                     , getDay(row.get(i).getMedicineTakenDate())
                     , getHour(row.get(i).getMedicineTime())
-                    , getMin(row.get(i).getMedicineTime()), 00);
+                    , getMin(row.get(i).getMedicineTime()), 0);
             if (cal.compareTo(current) <= 0) {
 
             } else {
@@ -193,24 +193,6 @@ public class Pillreminder extends AppCompatActivity implements MainFragment.OnFr
         fragment.setArguments(bundle);
         transaction.replace(R.id.MainFragmentLayout, fragment).commit();
     }
-
-   /* @Override
-    public void onBackPressed() {
-        if (doubleBackToExitPressedOnce) {
-            super.onBackPressed();
-            return;
-        }
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
-
-        new Handler().postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce = false;
-            }
-        }, 2000);
-    }*/
 
     @Override
     protected void onDestroy() {
@@ -267,7 +249,7 @@ public class Pillreminder extends AppCompatActivity implements MainFragment.OnFr
 
     @Override
     protected void onRestart() {
-        if (Build.VERSION.SDK_INT >= 19) {
+        if (Build.VERSION.SDK_INT >= 11) {
             recreate();
         } else {
             Intent intent = getIntent();
@@ -375,43 +357,4 @@ public class Pillreminder extends AppCompatActivity implements MainFragment.OnFr
     }
 }
 
-       /* betterSpinner = (MaterialBetterSpinner)findViewById(R.id.material_spinner);
-
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_dropdown_item_1line,SPINNERLIST);
-        betterSpinner.setAdapter(arrayAdapter);
-
-        bspinner = (MaterialBetterSpinner)findViewById(R.id.material_spinner1);
-
-        ArrayAdapter<String> Arrayadapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_dropdown_item_1line,spinnerLIST);
-        bspinner.setAdapter(Arrayadapter);*/
-
-
-
-
-
-    /*public void ChangeFragment(View view) {
-        android.support.v4.app.Fragment fr;
-
-        if (view == findViewById(R.id.rb1)) {
-            fr = new GeneralFragment();
-
-            android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
-            android.support.v4.app.FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.fragment_place, fr);
-            ft.commit();
-
-
-        }if (view == findViewById(R.id.rb2)) {
-                    fr = new BirthcFragment();
-
-                    android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
-                    android.support.v4.app.FragmentTransaction ft = fm.beginTransaction();
-                    ft.replace(R.id.fragment_place, fr);
-                    ft.commit();
-                }
-
-
-    }*/
 
